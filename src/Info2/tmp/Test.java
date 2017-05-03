@@ -1,4 +1,4 @@
-package Info2.blatt2;
+package Info2.tmp;
 
 public class Test {
 
