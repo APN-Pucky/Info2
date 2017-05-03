@@ -1,4 +1,4 @@
-package Info2.tmp;
+package tmp;
 
 public class Test {
 	//
