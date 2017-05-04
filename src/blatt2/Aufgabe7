@@ -1,0 +1,23 @@
+Aufgabe 7:
+c)
+1)
+modulares Zahlensystem
+m1 = 999
+m2 = 1000
+m3 = 1001
+
+=> m = m1*m2*m3
+
+Zahlenbereich 0 <= r < 999999000
+
+2)
+
+formal:
+r1 = r mod 999
+r2 = r mod 1000
+r3 = r mod 1001
+
+umgangsprachlich:
+r1 wird gesettet auf den Value den man von r mod 999 haven tut.
+r2 tut similar laufen tun nur mit 1 mehr, namely 1000. Folglich mod 1000.
+r3 getten wir wieder gleich. But mit 1001-mod.
