@@ -20,13 +20,13 @@ public class ZufallszahlenVisualisierung extends JPanel
 
 	private int[] a;
 	//constants
-	private final int max_number = 100;
-	private final int x_offset= 15;
-	private final int y_offset= 15;
-	private final int triangle_length = 10;
-	private final int triangle_height = 10;
-	private final int pixel_size = 1;
-	private final int x_axis_step_size = 100;
+	private final int MAX_NUMBER = 100;
+	private final int X_OFFSET= 15;
+	private final int Y_OFFSET= 15;
+	private final int TRIANGLE_LENGTH = 10;
+	private final int TRIANGLE_HEIGHT = 10;
+	private final int PIXEL_SIZE = 1;
+	private final int X_AXIS_STEP_SIZE = 100;
 	
 	public ZufallszahlenVisualisierung(int[] a_param)
 	{
@@ -65,7 +65,7 @@ public class ZufallszahlenVisualisierung extends JPanel
 	 */
 	private void drawAbsolutePoint(Graphics g, int x, int y, int x_off, int y_off)
 	{
-		g.drawRect(x+x_off, -y+y_off, pixel_size,pixel_size );
+		g.drawRect(x+x_off, -y+y_off, PIXEL_SIZE,PIXEL_SIZE );
 	}
 	
 	/**
@@ -96,28 +96,28 @@ public class ZufallszahlenVisualisierung extends JPanel
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         //init
-        final int scale_height = (getHeight()-y_offset*4);
+        final int scale_height = (getHeight()-Y_OFFSET*4);
         g.setColor(Color.RED);
         
         //axis lines
-        g.drawLine(x_offset, y_offset, x_offset,getHeight()-y_offset);
-        g.drawLine(x_offset, getHeight()-y_offset, getWidth()-x_offset,getHeight()-y_offset);
+        g.drawLine(X_OFFSET, Y_OFFSET, X_OFFSET,getHeight()-Y_OFFSET);
+        g.drawLine(X_OFFSET, getHeight()-Y_OFFSET, getWidth()-X_OFFSET,getHeight()-Y_OFFSET);
         //axis triangles
-        fillRelativePolygon(g,new int[]{0,0,triangle_height},new int[]{-triangle_length/2,triangle_length/2,0}, 3, getWidth()-x_offset,getHeight()-y_offset);      
-        fillRelativePolygon(g,new int[]{-triangle_length/2,triangle_length/2,0},new int[]{0,0,-triangle_height}, 3, x_offset, y_offset);
+        fillRelativePolygon(g,new int[]{0,0,TRIANGLE_HEIGHT},new int[]{-TRIANGLE_LENGTH/2,TRIANGLE_LENGTH/2,0}, 3, getWidth()-X_OFFSET,getHeight()-Y_OFFSET);      
+        fillRelativePolygon(g,new int[]{-TRIANGLE_LENGTH/2,TRIANGLE_LENGTH/2,0},new int[]{0,0,-TRIANGLE_HEIGHT}, 3, X_OFFSET, Y_OFFSET);
         
         //y-axis
-        g.drawString("Zufallszahl", x_offset+triangle_length, y_offset);
-        g.drawString(""+max_number, x_offset,getHeight()-y_offset-scale_height);
+        g.drawString("Zufallszahl", X_OFFSET+TRIANGLE_LENGTH, Y_OFFSET);
+        g.drawString(""+MAX_NUMBER, X_OFFSET,getHeight()-Y_OFFSET-scale_height);
         //x-axis
-        g.drawString("Durchgang", getWidth()-x_offset-g.getFontMetrics().stringWidth("Durchgang"),getHeight()-y_offset-triangle_length);
-        for(int i = 0 ; i < getWidth()/x_axis_step_size;i++)
+        g.drawString("Durchgang", getWidth()-X_OFFSET-g.getFontMetrics().stringWidth("Durchgang"),getHeight()-Y_OFFSET-TRIANGLE_LENGTH);
+        for(int i = 0 ; i < getWidth()/X_AXIS_STEP_SIZE;i++)
         {
-        	g.drawString(""+i*x_axis_step_size, x_offset-g.getFontMetrics().stringWidth(""+i*x_axis_step_size)/2+i*x_axis_step_size,getHeight()-y_offset+triangle_length);
+        	g.drawString(""+i*X_AXIS_STEP_SIZE, X_OFFSET-g.getFontMetrics().stringWidth(""+i*X_AXIS_STEP_SIZE)/2+i*X_AXIS_STEP_SIZE,getHeight()-Y_OFFSET+TRIANGLE_LENGTH);
         }
         //points from a
         g.setColor(Color.BLACK);
-        for(int i=0; i<a.length;i++) drawSemiRelativePoint(g,i,a[i],x_offset, getHeight()-y_offset, scale_height/(double)max_number);
+        for(int i=0; i<a.length;i++) drawSemiRelativePoint(g,i,a[i],X_OFFSET, getHeight()-Y_OFFSET, scale_height/(double)MAX_NUMBER);
         
     }
 
@@ -146,10 +146,10 @@ public class ZufallszahlenVisualisierung extends JPanel
     }
     
     /**
-     * Gibt ein neues Array zurück bestehend aus a und b.
+     * Gibt ein neues Array zurï¿½ck bestehend aus a und b.
      * @param a 	1. Array
      * @param b		2. Array
-     * @return		Zusammengefügtes Array
+     * @return		Zusammengefï¿½gtes Array
      */
     private static int[] append(int[] a, int[] b)
     {
