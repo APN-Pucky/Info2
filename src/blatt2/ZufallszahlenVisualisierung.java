@@ -146,10 +146,10 @@ public class ZufallszahlenVisualisierung extends JPanel
     }
     
     /**
-     * Gibt ein neues Array zurück bestehend aus a und b.
+     * Gibt ein neues Array zurueck bestehend aus a und b.
      * @param a 	1. Array
      * @param b		2. Array
-     * @return		Zusammengefügtes Array
+     * @return		Zusammengefuegtes Array
      */
     private static int[] append(int[] a, int[] b)
     {
