@@ -1,0 +1,25 @@
+//Nicht schoen
+
+
+Aufgabe 5:
+a)
+8^4*2 Zahlendarstellungen (*2 +/-)
+b)
+0= 0.000*8^   	-> 16x 0
+1             	-> 3x 1    	-> 1-7 3x  => 7*3
+-1 				-> 3x -1 	-> 1--7  => 7*3
+
+
+
+keine Null ->>>>> einzigartig
+eine Null d1 =0 || d3 =0 ------->>>>> 7x doppelt   -> 8^2 werte  - plus minus => 7*8^2*2
+zwei Null  -------> 7*7*2*2 + 7*6*2
+
+Zahlen= 8^4*2 - 16 -8^2*7*2 - 7*7*2*2 - 7*6*2 = 7000
+
+
+
+
+d2-> d1    7*7*2
+d3->d2     7*7*2
+d3-> d1    6*7*2
