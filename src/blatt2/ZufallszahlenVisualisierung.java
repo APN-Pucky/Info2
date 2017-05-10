@@ -148,6 +148,7 @@ public class ZufallszahlenVisualisierung extends JPanel {
 	 */
 	public static void main(String[] args) {
 		// -------
+		// 
 		int[] test_1 = new Zufallszahlengenerator(21, 23, 100, 1).randomArray(200);
 		int[] test_2 = new Zufallszahlengenerator(21, 7, 100, 1).randomArray(200);
 		int[] test_3 = new Zufallszahlengenerator(21, 23, 100, 1, true).randomArray(200);
