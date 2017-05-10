@@ -10,7 +10,18 @@ public class Aufgabe7
 {
 	//constants
 	private static final int[] MODULAR_ARRAY = new int[]{999,1000,1001};
-	private static final int MAX_MODULAR_VALUE = 999999000;
+	
+	private static final int MAX_MODULAR_VALUE;
+	//calc MAX_MODULAR_VALUE
+	static 
+	{
+		int ret = 1;
+		for(int m : MODULAR_ARRAY)
+		{
+			ret *= m;
+		}
+		MAX_MODULAR_VALUE = ret;
+	}
 	
 	/**
 	 * Testet die rekursive Fibonacci Methode und gibt das Ergebniss von fib(n) zurück
@@ -109,14 +120,13 @@ public class Aufgabe7
 	public static int iterativeFib(short n)
 	{
 		if(n<1)return 0;
-		int prev_val = 0; 	// n=0
-		int val = 1;		// n==1
-		while(n>1)
+		int prev_val = 0;
+		int val = 1;
+		for(;n>1;n--)
 		{
 			int tmp = val;
 			val +=prev_val;
 			prev_val = tmp;
-			n--;
 		}
 		return val;
 	}
