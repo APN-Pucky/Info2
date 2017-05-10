@@ -149,14 +149,14 @@ public class ZufallszahlenVisualisierung extends JPanel
 <<<<<<< HEAD
      * Gibt ein neues Array zurueck bestehend aus a und b.
 =======
-     * Gibt ein neues Array zur�ck bestehend aus a und b.
+     * Gibt ein neues Array zurueck bestehend aus a und b.
 >>>>>>> branch 'master' of https://github.com/APN-Pucky/Info2.git
      * @param a 	1. Array
      * @param b		2. Array
 <<<<<<< HEAD
      * @return		Zusammengefuegtes Array
 =======
-     * @return		Zusammengef�gtes Array
+     * @return		Zusammengefuegtes Array
 >>>>>>> branch 'master' of https://github.com/APN-Pucky/Info2.git
      */
     private static int[] append(int[] a, int[] b)
