@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{2}
+
+\begin{document}
+
+\Aufgabe{6}
+
+\begin{enumerate}
+
+\item Man zeichnet erst die Achsen und die Beschriftungen und geht dann über jeden Punkt des Arrays und zeichnet diesen in die Graphik ein. Dabei kann das Array vorher frei erzeugt werden und wird der Visualisierung dann als Parameter übergeben.
+
+\item Um alle Zufallsgeneratoren zu vereinheitlichen werden alle relevanten Parameter beim erzeugen übergeben. Dabei gibt der boolean use\_java an, ob der im Paket java.util.Random sitzende Zufallsgenerator oder lie lineare Kongruenzmethode aus der Aufgabe benutzt werden soll.
+
+\item Um alle 95 Zufallsgeneratoren zu erzeugen, geht man in einer for-Schleife über alle diese und erzeugt jeweils ein Array der Länge 100. Dabei soll das Inkrement stets 0 sein. Diese lassen sich nun Visualisieren. Bei uns hängen alle Arrays aneinander, um diese im direkten Vergleich sehen zu können.
+
+\begin{description}
+\item [0 und 1] Diese waren nicht in der geforderten Liste und geben konstant 0 oder 1.
+\item [6, 8, 12, 16, 18, 27, 33, 35, 36, 47, 50, 61, 62 ,64, 70, 75, 79, 81, 85, 89, 91, 96] Geben nur eine Handvoll Werte aus und diese in einer kurzen Periode.
+\end{description}
+
+Auch bei vielen anderen lässt sich noch ein leichtes Muster erkennen.
+Bei 97 fängt die Liste wegen dem Modulo wieder von Vorne an.
+
+\end{enumerate}
+
+\end{document}

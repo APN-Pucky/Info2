@@ -28,31 +28,24 @@
 \termin{Fr. 08-10, SR217}
 
 %Blattnummer anpassen z. B. \blatt{5}
-\blatt{2}
+\blatt{1}
 
 \begin{document}
 
-\Aufgabe{5}
+\Aufgabe{4}
 
 \begin{enumerate}
 
-\item Die einzelnen Komponenten der Darstellung tragen zu der gesuchten Zahl der insgesammten Zahlendarstellungen bei.\\
-Das Vorzeichen trägt mit einem Faktor von $2$ dazu bei.
-Die 3 Oktalzahlen der Mantisse tragen genau $8^3 = 512$ dazu bei
-und der Exponent kann genau $8^1 = 8$ Zahlen darstellen.\\
-Zusammen ergibt das $2 \cdot 8^3 \cdot 8 = 8192$ verschiedene Zahlendarstellungen.
+\item Man betrachte die Multimengendarstellungen von $a$ und $b$ gegeben durch $a_m = PD_m(a)$ sowie $b_m = PD_m(b)$.\\
+Dann ist $gcd_m = PD_m(gcd(a, b)) = a_m \cap b_m$.\\
+Ebenso seien $a_r = a_m \setminus gcd_m$ und $b_r = b_m \setminus gcd_m$, sodass $a_m = a_r \cup gcd_m$ und $b_m = b_r \cup gcd_m$.\\
+Daraus folgt, dass $a_m \cup b_m = a_r \cup b_r \cup gcd_m \cup gcd_m$.\\
+Ebenso folgt direkt, dass $PD_m(\frac {a \cdot b}{gcd(a, b)}) = a_r \cup b_r \cup gcd_m = a_r \cup b_m = b_r \cup a_m$.\\
+Da $PD_m(lcm(a, b)) = a_m \cup a_s = b_m \cup b_s$ und, da es sich um das kleinste gemeinsame Vielfache handelt, $a_s \cap b_s = \varnothing$ gilt, muss $a_r = a_s$ und $b_r = b_s$ sein.\\
+Somit resultiert, dass $PD_m(\frac {a \cdot b}{gcd(a, b)}) = PD_m(lcm(a, b))$ bzw. $\frac {a \cdot b}{gcd(a, b)} = lcm(a, b)$.
 
-\item Da verschiedene Zahlendarstellungen dieselben Zahlen darstellen, fallen nun einige Zahlendarstellungen raus.\\
-Da der Exponent auf einer Oktalbasis arbeitet, wird bei Inkrementierung des Exponenten um eins die Mantisse um eins nach rechts verschoben, also $d_1 = 0; d_2 = d_1; d_3 = d_2$ um dieselbe Zahl darzusellen.\\
-Um eine Ordnung zu erhalten, soll der Exponent also möglichst gering gewählt werden, sodass $d_1$ nicht 0 wird. Dies ist mit Ausnahme von $e=0$.\\
-Das Vorzeichen ist in keiner Weise ersetzbar.
-\begin{description}
-\item [$e \neq 0$]
-Man kann annehmen, dass $d_1 \neq 0$ ist. Somit gibt es $2 \cdot 7 \cdot 8^2 \cdot 7 = 6272$ verschiedene darstellbare Zahlen.
-\item [$e = 0$]
-Nun muss man berücksichtigen, dass $d_1$ auch kleiner als 1 werden kann. Somit ergeben sich weitere $2 \cdot 8^3 \cdot 1 = 1024$ verschiedene darstellbare Zahlen
-\end{description}
-Zählt man nun beide Teile zusammen erhält man $7296$ verschiedene darstellbare Zahlen.
+\item Nach der ersten Teilaufgabe kann man das Problem mit $lcm(a, b) = \frac {a \cdot b}{gcd(a, b)}$ auf die Berechnung des größten gemeinsamen Teilers reduzieren. Dafür haben wir in der Vorlesung bereits den Euklidschen Algorithmus kennengelernt. \\
+(siehe Programmieraufgaben innerhalb des .zip Archives)
 
 \end{enumerate}
 

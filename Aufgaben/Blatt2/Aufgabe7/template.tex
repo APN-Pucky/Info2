@@ -1,0 +1,70 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{2}
+
+\begin{document}
+
+\Aufgabe{7}
+
+\begin{enumerate}
+
+\item Da die Rechenzeit exponentiell ansteigt, sind bereits Fibunaccizahlen von 40 nicht mehr gut zu berechnen.
+\item Hierbei ist die Rechenzeit linear, jedoch wird schnell ein Overflow produziert und die Werte stimmen auch nicht mehr.
+\item 
+\begin{enumerate}
+\item 
+modulares Zahlensystem:\\
+$m_1 = 999$\\
+$m_2 = 1000$\\
+$m_3 = 1001$\\
+\\
+$\Rightarrow m = m_1 \cdot m_2 \cdot m_3$\\
+\\
+Zahlenbereich: $0 \leq r < 999999000$
+
+\item
+\begin{description}
+\item [Formal]
+$r_1 = r mod 999$\\
+$r_2 = r mod 1000$\\
+$r_3 = r mod 1001$\\
+
+\item [Umgangsprachlich]
+$r_1$ wird gesettet auf den Value den man von r mod 999 haven tut.\\
+$r_2$ tut similar laufen tun nur mit 1 mehr, namely 1000. Folglich mod 1000.\\
+$r_3$ getten wir wieder gleich. But mit 1001-mod.
+\end{description}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}

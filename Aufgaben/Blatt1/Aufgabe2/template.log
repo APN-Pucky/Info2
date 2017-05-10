@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.28)  5 MAY 2017 15:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.28)  3 MAY 2017 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,45 +592,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 40.
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 40.
 
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 40.
+Underfull \hbox (badness 10000) in paragraph at lines 37--40
+
+ []
 
 
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 40.
+Underfull \hbox (badness 10000) in paragraph at lines 41--44
+
+ []
 
 
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 40.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 40.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 40.
-LaTeX Font Info:    Try loading font information for U+msa on input line 40.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 40.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 59.
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 47.
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -640,24 +613,20 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3137 strings out of 494953
- 39201 string characters out of 6180977
- 92904 words of memory out of 5000000
- 6347 multiletter control sequences out of 15000+600000
- 28947 words of font info for 36 fonts, out of 8000000 for 9000
+ 3047 strings out of 494953
+ 37260 string characters out of 6180977
+ 91904 words of memory out of 5000000
+ 6289 multiletter control sequences out of 15000+600000
+ 16691 words of font info for 20 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,10n,45p,299b,252s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm
-/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texm
-f/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmsy10.pfb>
-Output written on template.pdf (1 page, 106632 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/
+public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmr10.pfb>
+Output written on template.pdf (1 page, 76250 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 21 PDF objects out of 1000 (max. 8388607)
+ 14 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
