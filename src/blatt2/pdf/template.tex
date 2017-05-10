@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{2}
+
+\begin{document}
+
+\Aufgabe{5}
+
+\begin{enumerate}
+
+\item Die einzelnen Komponenten der Darstellung tragen zu der gesuchten Zahl der insgesammten Zahlendarstellungen bei.\\
+Das Vorzeichen trägt mit einem Faktor von $2$ dazu bei.
+Die 3 Oktalzahlen der Mantisse tragen genau $8^3 = 512$ dazu bei
+und der Exponent kann genau $8^1 = 8$ Zahlen darstellen.\\
+Zusammen ergibt das $2 \cdot 8^3 \cdot 8 = 8192$ verschiedene Zahlendarstellungen.
+
+\item Da verschiedene Zahlendarstellungen dieselben Zahlen darstellen, fallen nun einige Zahlendarstellungen raus.\\
+Da der Exponent auf einer Oktalbasis arbeitet, wird bei Inkrementierung des Exponenten um eins die Mantisse um eins nach rechts verschoben, also $d_1 = 0; d_2 = d_1; d_3 = d_2$ um dieselbe Zahl darzusellen.\\
+Um eine Ordnung zu erhalten, soll der Exponent also möglichst gering gewählt werden, sodass $d_1$ nicht 0 wird. Dies ist mit Ausnahme von $e=0$.\\
+Das Vorzeichen ist in keiner Weise ersetzbar.
+\begin{description}
+\item [$e \neq 0$]
+Man kann annehmen, dass $d_1 \neq 0$ ist. Somit gibt es $2 \cdot 7 \cdot 8^2 \cdot 7 = 6272$ verschiedene darstellbare Zahlen.
+\item [$e = 0$]
+Nun muss man berücksichtigen, dass $d_1$ auch kleiner als 1 werden kann. Somit ergeben sich weitere $2 \cdot 8^3 \cdot 1 = 1024$ verschiedene darstellbare Zahlen
+\end{description}
+Zählt man nun beide Teile zusammen erhält man $7296$ verschiedene darstellbare Zahlen.
+
+\end{enumerate}
+
+\end{document}
