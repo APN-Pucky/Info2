@@ -148,9 +148,11 @@ public class ZufallszahlenVisualisierung extends JPanel {
 	 */
 	public static void main(String[] args) {
 		// -------
-		// 
+		// Ein Zufallsgenerator nach dem ersten Punkt
 		int[] test_1 = new Zufallszahlengenerator(21, 23, 100, 1).randomArray(200);
+		// nach dem zweiten Punkt
 		int[] test_2 = new Zufallszahlengenerator(21, 7, 100, 1).randomArray(200);
+		// und mit dem Argument fuer zufaellige Integer von JAVA
 		int[] test_3 = new Zufallszahlengenerator(21, 23, 100, 1, true).randomArray(200);
 
 		int[] test97 = new int[] {};
@@ -161,9 +163,11 @@ public class ZufallszahlenVisualisierung extends JPanel {
 		}
 		// --------
 		JFrame frame = new JFrame("Visualisierung von Zufallszahlengeneratoren");
+		// Zufallsgeneratoren einfuegen: ----------------------- || hier ||
 		frame.getContentPane().add(new ZufallszahlenVisualisierung(test97), BorderLayout.CENTER);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(400, 300);
+		frame.setSize(1800, 300);
+		//400 , 300
 		frame.setVisible(true);
 	}
 
