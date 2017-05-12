@@ -51,11 +51,13 @@ public class Aufgabe7 {
 	 *            fib-Index
 	 */
 	private static void testModFib(int n) {
-		short[] value = modularFib((short) n);
+		short[] valueR = modularRekursivFib((short) n);
+		short[] valueI = modularIterativFib((short) n);
 		int value_int = iterativeFib((short) n);
 		short[] value_iter = intToModShort(value_int, MODULAR_ARRAY);
 
-		System.out.println("modFib__[" + n + "]= {" + value[0] + ", " + value[1] + ", " + value[2] + "}");
+		System.out.println("modRekFib__[" + n + "]= {" + valueR[0] + ", " + valueR[1] + ", " + valueR[2] + "}");
+		System.out.println("modIterFib__[" + n + "]= {" + valueI[0] + ", " + valueI[1] + ", " + valueI[2] + "}");
 		System.out.println("iterFib2[" + n + "]= {" + value_iter[0] + ", " + value_iter[1] + ", " + value_iter[2]
 				+ "} = " + value_int);
 	}
@@ -155,12 +157,32 @@ public class Aufgabe7 {
 	 *            Index
 	 * @return n-te Fibonaccizahl in modularer Arithmetik
 	 */
-	public static short[] modularFib(short n) {
+	public static short[] modularRekursivFib(short n) {
 		if (n < 1)
 			return intToModShort(0, MODULAR_ARRAY);
 		else if (n == 1)
 			return intToModShort(1, MODULAR_ARRAY);
-		return modularAddition(modularFib((short) (n - 1)), modularFib((short) (n - 2)), MODULAR_ARRAY);
+		return modularAddition(modularRekursivFib((short) (n - 1)), modularRekursivFib((short) (n - 2)), MODULAR_ARRAY);
+	}
+	
+	/**
+	 * Gibt die n-te Fibonaccizahl in modularer Arithmetik zurueck. (iterativ)
+	 * 
+	 * @param n
+	 *            Index
+	 * @return n-te Fibonaccizahl in modularer Arithmetik
+	 */
+	public static short[] modularIterativFib(short n) {
+		if (n < 1)
+			return intToModShort(0, MODULAR_ARRAY);
+		short[] prev_val = intToModShort(0, MODULAR_ARRAY);
+		short[] val = intToModShort(1, MODULAR_ARRAY);
+		for (; n > 1; n--) {
+			short[] tmp = val;
+			val = modularAddition(val, prev_val, MODULAR_ARRAY);
+			prev_val = tmp;
+		}
+		return val;
 	}
 
 	/**
