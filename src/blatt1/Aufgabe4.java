@@ -15,9 +15,8 @@ public class Aufgabe4 {
 	 * Start-Methode zur Berechnung des kleinsten gemeinsamen Vielfachen.
 	 * 
 	 * Falls Werte als Konsolenargumente uebergeben werden, werden diese als
-	 * Parameter fuer die Rechnung benutzt. Andernfalls werden die Standart
-	 * Werte 798 und 3800 bennutzt.
-	 * 
+	 * Parameter fuer die Rechnung benutzt. Andernfalls werden die Standardwerte
+	 * 798 und 3800 bennutzt.
 	 * Falls der erste Parameter "-h" oder "--help" seien sollte, so wird ein
 	 * kurzer Hilfetext zur Parametereingabe ausgegeben.
 	 * 
