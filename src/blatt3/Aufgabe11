@@ -1,0 +1,27 @@
+Aufgabe 11:
+a)
+Die Speicherzelle ist unendlich groß.
+k[x] := x-te Dezimalzahl.
+Speicherzelle j.
+
+sgn(i_0)+1 = j[0]
+sgn(i_1)+1 = j[1]
+sgn(i_2)+1 = j[2]
+
+i_0[0] =  j[3]
+i_1[0] =  j[4]
+i_2[0] =  j[5]
+(...)
+i_0[n] =  j[3 + 3*n]
+i_1[n] =  j[3 + 3*n+1]
+i_2[n] =  j[3 + 3*n+2]
+
+d)
+Beim Testen des Arrays {123,124,125} stellt man fest, dass der maximale Wert für Integer überschritten wird.
+Lösungen wären:
+
+- Verwendung von moduarer Arithmetik
+- long (oder unsigned long/int, nicht in java)
+- eine Verschiebung der Dezimalzahlen ins Negative
+- Bessere Aufgabenstellung, da in Aufgabenteil (c) die Kodierung des Vorzeichens nicht eindeutig geklärt ist!!!
+ =========> Könnte alles sein.
