@@ -1,0 +1,7 @@
+Aufgabe 10:
+a)
+Jeder Gast muss um ein Zimmer aufrücken, sodass das erste Zimmer frei wird.
+b)
+Die Strategie von a) wird 50 mal angewendet.
+c)
+Jeder Gast muss in das Zimmer mit der 2-fachen Nummerierung, sodass alle ungeraden Zimmer frei werden, diese könen dann von abzählbar unendlich vielen Informatikern belegt werden.
