@@ -9,7 +9,7 @@ package blatt3;
  */
 public class Aufgabe11 {
 	/**
-	 * 
+	 * Teilt Integer auf
 	 * @param internalFormat
 	 * @return
 	 */
@@ -18,7 +18,7 @@ public class Aufgabe11 {
 		return decode(internalFormat,3);
 	}
 	/**
-	 * 
+	 * Teilt Integer auf
 	 * @param internalFormat
 	 * @param numberOfInts
 	 * @return
@@ -41,7 +41,7 @@ public class Aufgabe11 {
 	}
 	
 	/**
-	 * 
+	 * Fuegt Integer zusammen
 	 * @param integersArray
 	 * @return
 	 */
@@ -60,7 +60,7 @@ public class Aufgabe11 {
 		return ret;
 	}
 	/**
-	 * 
+	 * Setzt Dezimalziffer
 	 * @param number
 	 * @param decimal
 	 * @param index
@@ -72,7 +72,7 @@ public class Aufgabe11 {
 		return number + powI(10,index) * decimal;
 	}
 	/**
-	 * 
+	 * Gibt Integer Dezimalziffer zurueck
 	 * @param number
 	 * @param index
 	 * @return
@@ -84,7 +84,7 @@ public class Aufgabe11 {
 		return (number/(powI(10,index)))%10;
 	}
 	/**
-	 * Integer pow
+	 * Integer Potenz
 	 * @param base
 	 * @param exp
 	 * @return 
