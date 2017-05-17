@@ -1,0 +1,18 @@
+Aufgabe 14:
+a)
+(1) Sagt aus, dass die Funktion f, bis auf einen gewählten festen Faktor c, immer(alle n) kleiner als die Funktion g ist.
+(2) Sagt aus, dass die Funktion f, bis auf einen gewählten festen Faktor c, ab einem n größer n_0, immer kleiner als die Funktion g ist.
+
+(1)=>(2) offensichtlich, n_0 ist gleich 0, c gleich.
+(2)=>(1) Das c muss so gewählt werden, dass n_0=0 wird.
+			Dies ist immer möglich, da c beliebig hoch gewählt werden kann um f(n)<=g(n)*c zu erfüllen.(g(n) ist immer ungleich Null) 
+			
+b)
+Damit f(n)/g(n) gegen Null konvergiert muss g(n)>f(n) ab einem n_0 gelten und g(n) muss schneller mit n wachsen als f(n).
+Dies ist eine 'genauere' Aussage als die der Definition (2). Folgich ist f(n) = O(g(n)).
+
+c)
+komplexer
+{f7,f6} 
+{f9,f10}
+weniger komplex
