@@ -1,0 +1,45 @@
+Aufgabe 13:
+a)
+A=EI+FK
+B=EJ+FL
+C=GI+HK
+D=GJ+HL
+
+A=m2+m3
+ =EI+F
+ 
+B=t1+m5+m6
+ =m1+m2+s1*s5+s4*L
+ =s2*s6+EI+(G+H)*(J-I)+(F-s2)*L
+ =(s1-E)*(L-s5)+EI+(G+H)*(J-I)+(F-s1+E)*L
+ =(G+H-E)*(L-J+I)+EI+(G+H)*(J-I)+(F-G-H+E)*L
+ =GL-GJ+GI +HL-HJ+HI -EL+EJ-EI +EI +GJ-GI+HJ-HI +FL-GL-HL+EL
+ =+EJ+FL
+ 
+C=t2-m7
+ =t1+m4-H*s8
+ =m1+m2+(s3*s7)-H*(s6-K)
+ =(s2*s6)+EI+(E-G)*(L-J)-H*(L-s5-K)
+ =(s1-E)*(L-s5)+EI+EL+GJ-EJ-GL-H*(L-J+I-K)
+ =(G+H-E)*(L-J+I)+EI+EL+GJ-EJ-GL-H*(L-J+I-K)
+ =GL-GJ+GI +HL-HJ+HI -EL+EJ-EI +EI+EL+GJ-EJ-GL -HL+HJ-HI+HK
+ =+GI+HK
+ 
+D=t2+m5
+ =t1+m4+s1*s5
+ =m1+m2+s3*s7+(G+H)*(J-I)
+ =s2*s6+EI+(E-G)*(L-J)+(G+H)*(J-I)
+ =(s1-E)*(L-s5)+EI +EL-EJ-GL+GJ +GJ-GI+HJ-HI
+ =(G+H-E)*(L-J+I) +EI +EL-EJ-GL+GJ +GJ-GI+HJ-HI
+ =GL-GJ+GI +HL-HJ+HI -EL+EJ-EI  +EI +EL-EJ-GL+GJ +GJ-GI+HJ-HI
+ =+HL+GJ
+ 
+ b)
+ Multiplikationen: 7
+ Additionen: 15
+ Für n>1:
+ T(n) 	= 7*T(n/2) +15*(n/2)^2 
+ 		=  (... Rechenschritte wie auf Folien)
+   		= n^2.807*(T(1)+5)-5*n^2
+   		
+=> Laufzeit O(n^2807)
