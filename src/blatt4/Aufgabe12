@@ -1,0 +1,149 @@
+Aufgabe12:
+a)
+1)	STJ a, a, .+1	//a=0
+
+2)	STJ a, a, .+1	//a=0
+	STJ t, t, .+1	//t=0
+	STJ t, 1, .+1	//t=-1
+	STJ a, t, .+1	//a=1
+	
+3)	STJ a, b, .+1	//a=a-b
+
+4)	STJ a, a, .+1	//a=0
+	STJ a, b, .+1	//a=-b
+
+5)	STJ a, a, .+1	//a=0
+	STJ t, t, .+1	//t=0
+	STJ t, b, .+1	//t=-b
+	STJ a, t, .+1	//a=b
+	
+6)	STJ t, t, .+1 	//t=0
+	STJ k, k, .+1	//k=0
+	STJ	t, a, .+1	//t=-a
+	STJ k, t, .+1	//k=a
+	STJ a, a, .+1	//a=0
+	STJ a, k, .+1	//a=-a
+
+7)	STJ t, t, .+1	//t=0
+	STJ t, b, .+1	//t=-b
+	STJ a, t, .+1	//a=a+b
+	
+8)	STJ 0, 0, x
+
+9)	STJ t, t, .+1
+	STJ a, t, x
+	
+10)	STJ t, t, .+1
+	STJ k, k, .+1
+	STJ t, a, .+1
+	STJ t, k, x
+	
+11) STJ t, t, .+1
+	STJ a, t, .+2	// a<=0
+	STJ 0, 0, .+4
+	STJ k, k, .+1
+	STJ t, a, .+1	// a>=0
+	STJ t, k, x
+	
+12)	STJ t, t, .+1	//t=0
+	STJ k, k, .+1	//k=0
+	STJ k, b, .+1	//k=-b
+	STJ t, k, .+1	//t=b
+	STJ t, a, .+1	//t=b-a
+	STJ k, k, .+1	//k=0
+	STJ t, k, x
+	
+b)
+
+1)	
+a := 0
+if(c<=0) then goto y
+goto z
+
+:label y
+b:=-b
+c:=-c
+:label z
+if(c>=1) then goto x
+goto e
+:label x
+a := a+b
+c:=c-1
+goto z
+:label e
+
+2)
+if(b<=0) then goto y
+goto e
+:label y
+b:=-b
+:label e
+
+3)
+Pseudocode, möglichst den Befehlen nahe
+------------------------------------
+for(i=0;i++)
+{
+	if(|c|*i<=|b|)then next i
+	else i=i-1						//untere Grenze
+	break
+}
+if(b*c<=0)then i=i*(-1)-1				//b oder c negativ + -1, weil GausKlammer
+if(b*c<=0 && c*(i+1)=b) i=i+1			// ursprüngiches i passt genau
+------------------------------------
+
+i := 0
+ac := |c|
+ab := |b|
+:label z
+i := i+1
+t := ac *i
+
+if(ab >= t) then goto z
+i := i-1
+
+t := b*c
+if(t<=0) then goto x
+goto end
+
+:label x
+k:=-1
+i:=i*k
+t := i*c
+t := t-b
+i:=i-1
+if(t=0) then goto l
+goto end
+
+:label l
+i:=i+1
+:label end
+
+4)
+if(c=0) then goto k
+dbc := b div c
+t := c* dbc
+x := x-t
+goto end
+
+:label k
+a := b
+:label end
+
+5)
+if(b>=c) then goto z
+a := b
+goto end
+:label z
+a:= c
+:label end
+
+6)
+
+:label z
+if(c=0)then goto end
+r := b mod c
+c := b
+b := r
+goto z
+a := b
