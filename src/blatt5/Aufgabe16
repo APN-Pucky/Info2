@@ -1,0 +1,16 @@
+Aufgabe16:
+Binäre Suche:
+
+Die Informatiker verwenden die ersten n Schubladen.
+Die erste Schublade enthält einen Stein, falls bereits ein Informatiker im Raum war.
+Die zweite Schublade enthält einen Stein, falls bereits zwei Informatiker im Raum war. (usw...)
+
+
+Der Informatiker öffnet immer die mittlerste Schublade (zu Beginn n/2).
+Falls sie ein Stein enthält weiß er, dass er mehr als (n/2)-ter Informatiker ist.
+Falls sie keinen Stein enthält weiß er, dass er weniger als (n/2)-ter Informatiker ist.
+Nun kann der Schritt wiederhohlt werden für die neuen GRenzen enach dem ob ein Stein in der mittleren Schublade war.
+(Folglich n/2+1 bis n oder 0 bis n/2-1)
+Zum Schluss platziert der Informatiker in seiner Schublade (der niedersten leeren) einen Stein.
+
+Kompexität und Korrektheit entsprechen den in der Vorlesung vorgestellten bei der binären Suche.
