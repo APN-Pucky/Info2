@@ -1,0 +1,10 @@
+Aufgabe 17:
+
+a) myAlgo(x,array,0,array.length) gibt zurück ob array ein gleiches Element wie x enthält
+b) O(n)
+c) Wenn es ein Element x im Array array gibt, 
+   dann befindet sich dieses entweder in der ersten Hälfte des Arrays oder in der zweiten Hälfte.(Invariante)
+   
+   Das selbige gilt für die Hälften der Hälften usw...
+   
+   Wenn das Interval, in dem sich x im Array befinden könnte, die Größe 1 hat, kann man dieses eine Element vergleichen.(divide&conquer)
