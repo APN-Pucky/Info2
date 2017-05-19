@@ -1,0 +1,36 @@
+Aufgabe18:
+a)
+01,06,11,16,21,26,31
+02,07,12,17,22,27,32
+03,08,13,18,23,28,33
+04,09,14,19,24,29,34
+05,10,15,20,25,30,35
+b)
+
+1. Mittiger Wert w oberster Zeile mit x vergleichen:
+	x>=w => In Rechter Hälfte (inclusive w-Spalte)
+	x<w => In Linker Hälfte (exclusive w-Spalte)
+2. (1.) mit neuen Rändern wiederhohlen bis nur noch eine Spalte übrig ist 
+
+1. Mittiger Wert k übriger Spalte mit x vergleichen:
+	x>k => In Unterer Hälfte
+	x<k => In Oberer Hälfte 
+	x=k => Fertig
+2. (1.) mit neuen Rändern wiederhohlen bis nur noch eine Spalte übrig ist 
+
+
+=> Laufzeit O(log(m)+log(n))
+
+Laufzeit O(m+n) -Alternative
+Durch unterste Zeile Itterieren, falls der Wert >=x ist, durch Spalte itterieren.
+
+d)
+Falls das Element x nicht enthalten ist itteriert der Algorithmus bis zu einer belibigen Spalte und vergleicht deren Inhalten mit x. => Terminiert
+Falls das Element x enthalten ist ittereirt der Algorithmus zur entsprechenden Spalte und vergleicht die Inhalte mit x. => Terminiert
+
+Aufgrund der Struktur der Matrix befinden sich immer nur Werte niedriger oder gleich dem des untersten Elements in der Zeile. 
+Folglich sind die Werte einer Spalte durch zwei nebeneineander liegende Werte in der letzten Spalte eingeschlossen.
+
+Falls der Wert in dem Array ist muss er sich in der passenden Spalte befinden. => Korrektheit
+
+Man itteriert über m und über n -> O(m+n)
