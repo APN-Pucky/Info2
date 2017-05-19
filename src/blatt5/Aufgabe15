@@ -1,0 +1,21 @@
+Aufgabe 15:
+
+a)
+1) f(n)=n,g(n)=n^2
+2) f kann nicht, nicht langsamer und nicht schneller wachsen, ohne gleich g zu sein.
+3) f kann nicht gleich schnell und langsamer als g wachsen
+4) f kann nicht gleich schnell und schneller als g wachsen
+5) f(n)=n^2,g(n)=n
+6) f(n)=n^2,g(n)=n
+
+b)
+1) Mastertheorem(1.,e=0.5): n^2
+2) Mastertheorem(2.,e=0): n^2*log(n)
+3) Mastertheorem(3.,c=0.75,e=0.5): n^3
+4) log2(n) + 2* (log2(n^0.5) + 2*( log2(n^0.25) + 2*T(n^0.125)))
+	n^(0.5^k) = 2      (sqrt(2)=1)
+	k=log2(log2(n))
+	=> log2(n)*(log2(log2(n))+1)
+5) 2*(2*(2*T(n/8)+n/4*log2(n/4)) + n/2*log2(n/2)) + n*log(n)
+   = Summe(i=1 bis log2(n)){nlog2(n/(2^i))}+n*log2(n)
+   =n*log2(n)*(1+log2(n))/2

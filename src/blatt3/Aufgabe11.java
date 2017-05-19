@@ -89,7 +89,7 @@ public class Aufgabe11 {
 	public static int getDecimalAt(int number, int index) {
 		if (index < 0)
 			throw new IllegalArgumentException();
-		number = Math.abs(number);// should not happen :/
+		number = Math.abs(number);
 		return (number / (powI(10, index))) % 10;
 	}
 
