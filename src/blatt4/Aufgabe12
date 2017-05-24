@@ -34,16 +34,12 @@ a)
 	STJ a, t, x
 	
 10)	STJ t, t, .+1
-	STJ k, k, .+1
-	STJ t, a, .+1
-	STJ t, k, x
+	STJ t, a, x
 	
-11) STJ t, t, .+1
+11) STJ t, t, .+1	// t=0
 	STJ a, t, .+2	// a<=0
-	STJ 0, 0, .+4
-	STJ k, k, .+1
-	STJ t, a, .+1	// a>=0
-	STJ t, k, x
+	STJ 0, 0, .+2	// end
+	STJ t, a, x		// 0<=a
 	
 12)	STJ t, t, .+1	//t=0
 	STJ k, k, .+1	//k=0
