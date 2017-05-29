@@ -1,0 +1,13 @@
+Aufgabe 20:
+
+a)
+Der Algorithmus durchläuft das Array und tauscht nebeneinander liegende Paare, sodass a[i+1]>=a[i] gilt.
+Das Array wird so oft durchlaufen bis in einem Durchlauf keine Tauschoperationen anfallen. Dann ist das Array sortiert.
+
+b)
+Die Run variable wird immer wieder erhoeht, bis (im worst-case) a.length = run ist. 
+Dann wird die vertauscht-Variable nicht mehr auf true gesetzt. => terminiert
+
+c)
+Im worst case O(n^2), da die while-Schleife n-fach durchlauen wird und die for-Schleife n-fach(abnehmend) durchlauffen wird. 
+=> max. n*(n-1)/2 Tauschoperationen

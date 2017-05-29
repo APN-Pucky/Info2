@@ -19,6 +19,8 @@ public class Aufgabe19 {
     
     // statisches Attribut fuer Visualizer-Objekt (fuer die Animation noetig)
     private static Visualizer v = null;
+    //getestete Werte 5,10,15,20,25,30
+    private static final int QUICKINSERTIONSORT_BORDER = 20;
     
     /**
      * Fuellt ein Eingabearray mit Zufallszahlen.
@@ -61,7 +63,6 @@ public class Aufgabe19 {
      * @throws FileNotFoundException 
      */
     public static void main(String[] args) throws Exception {
-    	args = new String[]{"C:\\Users\\Alex\\Desktop\\absteigend.txt"};
     	int[] a_save = new int[100];// Erstelle Array a 
     	int[] a = new int[100];// Erstelle Array a 
     	if(args.length != 0)
@@ -81,6 +82,26 @@ public class Aufgabe19 {
         
         v = new Visualizer(a); // Visualizer-Objekt erzeugen und v zuweisen
                                // die Animation wird damit moeglich
+        
+        countdown(3);          // es spannend machen ;-)
+        visualQuickInsertSort(a);   // visuell sortieren
+        v.sleepRealtime(5000); // 5 Sekunden warten
+        
+        // Zuruecksetzen fuer den naechsten Sortier-Algorithmus
+        v.reset();    // grafischen Visualizer zuruecksetzen
+        if(args.length!=0)a=a_save.clone();else fillArray(a); // Array mit neuen Zahlen fuellen
+        v.setData(a); // Array-Daten des Visualizers setzen
+        v.repaint();  // Neuzeichnen des Fensters
+        
+        countdown(3);          // es spannend machen ;-)
+        visualQuickSort(a);   // visuell sortieren
+        v.sleepRealtime(5000); // 5 Sekunden warten
+        
+        // Zuruecksetzen fuer den naechsten Sortier-Algorithmus
+        v.reset();    // grafischen Visualizer zuruecksetzen
+        if(args.length!=0)a=a_save.clone();else fillArray(a); // Array mit neuen Zahlen fuellen
+        v.setData(a); // Array-Daten des Visualizers setzen
+        v.repaint();  // Neuzeichnen des Fensters
         
         countdown(3);          // es spannend machen ;-)
         visualMergeSort(a);   // visuell sortieren
@@ -312,5 +333,127 @@ public class Aufgabe19 {
     	}
     }
     
+    ///////////////////////////////////////////
+    /////////////////////////////////////////////
+    ////////Aufgabe 21////////////////////
+    ///////////////////////////////////////////
+    /////////////////////////////////////////////
+    /**
+     * Sortiert ein int-Array mit dem Quick-Sort Algorithmus
+     * (Code siehe Aufgabe 20) und visualisiert dies mit Hilfe
+     * eines (statischen) Visualizer-Objekts v, welches existieren muss.
+     * 
+     * @param a   das zu sortierende Array
+     * 
+     * @throws IllegalStateException falls das Visualizer-Objekt nicht existiert
+     */
+    public static void visualQuickSort(int[] a) 
+    {
+    	if (v == null)
+            throw new IllegalStateException("Visualizer-Objekt v "
+                                            +"existiert nicht!");
+        v.setLegend("Quick Sort");
+        
+        quickSort(a,0,a.length-1);
+        
+       v.setData(a);
+       v.setLegend("Quick Sort (terminiert)");
+       v.repaint();
+    }
+    //Kommentar
+    private static void quickSort(int[] a, int l, int r)
+    {
+    	//Pivot Mitte
+    	int m = a[(l+r)/2];
+    	int i = l;
+    	int j = r;
+    	while(i<=j)
+    	{
+    		for(;a[i]<m;i++);
+    		for(;m<a[j];j--);
+    		if(i<=j)
+    		{
+    			swap(a,i,j);
+
+    	        v.repaint();
+    	        v.sleep(2);
+    	        v.setData(a);
+    	        
+    			i++;
+    			j--;
+    		}
+    	}
+    	if(l<j)quickSort(a,l,j);
+    	if(i<r)quickSort(a,i,r);
+    }
+    
+    /**
+     * Sortiert ein int-Array mit dem Quick-Insert-Sort Algorithmus
+     * (Code siehe Aufgabe 20) und visualisiert dies mit Hilfe
+     * eines (statischen) Visualizer-Objekts v, welches existieren muss.
+     * 
+     * @param a   das zu sortierende Array
+     * 
+     * @throws IllegalStateException falls das Visualizer-Objekt nicht existiert
+     */
+    public static void visualQuickInsertSort(int[] a) 
+    {
+    	if (v == null)
+            throw new IllegalStateException("Visualizer-Objekt v "
+                                            +"existiert nicht!");
+        v.setLegend("Quick Insertion Sort");
+        
+        quickInsertionSort(a,0,a.length-1);
+        
+       v.setData(a);
+       v.setLegend("Quick Insertion Sort (terminiert)");
+       v.repaint();
+    }
+    //Kommentar
+    private static void quickInsertionSort(int[] a, int l, int r)
+    {
+    	if(r-l<QUICKINSERTIONSORT_BORDER)
+    	{
+    		//insertionsort
+    		for(int i=l+1; i <= r;i++)
+            {
+                
+            	int tmp= a[i];
+            	int j = i-1;
+            	for(;j>=0 && tmp < a[j];j--)
+            	{
+            		swap(a,j+1,j);
+            	}
+            	a[j+1] = tmp;
+            	
+                v.setData(a);
+                v.repaint(); // alles neuzeichnen
+                v.sleep(2);  // und warten
+            }
+    		return;
+    	}
+    	//Pivot Mitte
+    	int m = a[(l+r)/2];
+    	int i = l;
+    	int j = r;
+    	while(i<=j)
+    	{
+    		for(;a[i]<m;i++);
+    		for(;m<a[j];j--);
+    		if(i<=j)
+    		{
+    			swap(a,i,j);
+
+    	        v.repaint();
+    	        v.sleep(2);
+    	        v.setData(a);
+    	        
+    			i++;
+    			j--;
+    		}
+    	}
+    	if(l<j)quickSort(a,l,j);
+    	if(i<r)quickSort(a,i,r);
+    }
     
 } // class Aufgabe19
