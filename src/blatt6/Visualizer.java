@@ -20,7 +20,7 @@ public class Visualizer extends Frame {
 	// Groesse eines Punktes des grafisch dargestellten Arrays
 	private static final int SCALE = 4;
 	// Verzoegerungs-Faktor der Animation (1 ist am schnellsten, lieber nicht 0)
-	private static final int ANIMATION_DELAY = 1;
+	private static final int ANIMATION_DELAY = 10;
 
 	/**
 	 * Grafische Hervorhebung eines Array-Eintrags: keine Hervorhebung
