@@ -1,0 +1,19 @@
+Aufgabe 24:
+
+Man kann beide Arrays sortierten mittels Quicksort. Und Dann die sortierten Werte vergleichen:
+
+int[] a;
+int[] b;
+
+		int c = 0;
+		int j = 0;
+		for(int i =0; i < a.length;i++)
+		{
+			while(a[i]>b[j] && j<b.length-1)j++;
+			if(a[i]==b[j])
+			{
+				c++;
+				while(a[i]==b[j] && j<b.length-1)j++;
+			}
+		}
+		
