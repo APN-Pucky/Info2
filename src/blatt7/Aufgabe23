@@ -1,0 +1,3 @@
+Aufgabe23:
+Heapsort, weil O(1) Speicher benötigt wird und effizienter als Insertion Selection und Bubble Sort im duchschnittlichen und schlimmsten Fall.
+Im besten Fall wären zwar Bubble oder Insertion Sort besser, jedoch ist der Durchschnittliche Fall wichtiger/wahrscheinlicher.
