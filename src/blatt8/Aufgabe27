@@ -1,0 +1,30 @@
+Aufgabe27:
+a)
+Syntax:
+min: 	DICT ->	ELEM
+Semantik:
+min(create) = ERROR
+min(insert(E,create)) = E
+min(insert(E,D)) = min_elem(E,min(D))	
+
+Syntax:
+max: 	DICT ->	ELEM
+Semantik:
+max(create) = ERROR
+max(insert(E,create)) = E
+max(insert(E,D)) = max_elem(E,max(D))
+
+b)
+
+Syntax:
+succ:	ELEM x DICT -> ELEM
+Semantik:
+succ(E,insert(E,create)) = largestElement
+succ(E,D) = if isequal_elem(E,min(D)) then min(delete(E,D)) else succ(E,delete(min(D),D))
+
+
+Syntax:
+pred:	ELEM x DICT -> ELEM
+Semantik:
+pred(E,insert(E,create)) = smallestElement
+pred(E,D) = if isequal_elem(E,max(D)) then max(delete(E,D)) else pred(E,delete(max(D),D))
