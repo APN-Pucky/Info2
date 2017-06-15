@@ -406,7 +406,6 @@ public class Aufgabe19 {
         quickInsertionSort(a,0,a.length-1);
         
        v.setData(a);
-       v.setLegend("Quick Insertion Sort (terminiert)");
        v.repaint();
     }
     //Kommentar
