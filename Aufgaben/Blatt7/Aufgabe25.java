@@ -1,5 +1,3 @@
-package blatt7;
-
 import java.util.Stack;
 
 public class Aufgabe25 {

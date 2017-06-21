@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{7}
+
+\begin{document}
+
+\Aufgabe{22}
+
+\begin{enumerate}
+\item Insertion Sort
+\begin{equation*}
+\begin{array}{l|ccccccccc}
+0&16&19&33&10&24&23&41&36&35\\
+1&\textit{\textbf{16}}&19&33&10&24&23&41&36&35\\
+2&16&\textit{\textbf{19}}&33&10&24&23&41&36&35\\
+3&16&19&\textit{\textbf{33}}&10&24&23&41&36&35\\
+4&\textbf{10}&16&19&\textit{33}&24&23&41&36&35\\
+5&10&16&19&\textbf{24}&\textit{33}&23&41&36&35\\
+6&10&16&19&\textbf{23}&24&\textit{33}&41&36&35\\
+7&10&16&19&23&24&33&\textit{\textbf{41}}&36&35\\
+8&10&16&19&23&24&33&\textbf{36}&\textit{41}&35\\
+9&10&16&19&23&24&33&\textbf{35}&36&\textit{41}\\
+\end{array}
+\end{equation*}
+
+\item Bubble Sort
+\begin{equation*}
+\begin{array}{l|ccccccccc}
+0&16&19&33&10&24&23&41&36&35\\
+1&16&19&10&24&23&33&36&35&41\\
+2&16&10&19&23&24&33&35&36&41\\
+3&10&16&19&23&24&33&35&36&41\\
+\end{array}
+\end{equation*}
+
+\item Selection Sort
+\begin{equation*}
+\begin{array}{l|ccccccccc}
+0&16&19&33&10&24&23&41&36&35\\
+1&\textbf{10}&16&19&33&24&23&41&36&35\\
+2&10&\textbf{16}&19&33&24&23&41&36&35\\
+3&10&16&\textbf{19}&33&24&23&41&36&35\\
+4&10&16&19&\textbf{23}&33&24&41&36&35\\
+5&10&16&19&23&\textbf{24}&33&41&36&35\\
+6&10&16&19&23&24&\textbf{33}&41&36&35\\
+7&10&16&19&23&24&33&\textbf{35}&41&36\\
+8&10&16&19&23&24&33&35&\textbf{36}&41\\
+9&10&16&19&23&24&33&35&36&\textbf{41}\\
+\end{array}
+\end{equation*}
+
+\item Merge Sort
+\begin{equation*}
+\begin{array}{l|ccccccccccccccccc}
+0&16&19&33&10&24&23&41&36&35\\
+1&16&19&33&10&&24&23&41&36&35\\
+2&16&19&&33&10&&24&23&&41&36&35\\
+3&16&&19&&33&&10&&24&&23&&41&&36&35\\
+4&16&&19&&33&&10&&24&&23&&41&&36&&35\\
+5&16&&19&&33&&10&&24&&23&&41&&35&36\\
+6&16&19&&10&33&&23&24&&35&36&41\\
+7&10&16&19&33&&23&24&35&36&41\\
+7&10&16&19&23&24&33&35&36&41\\
+\end{array}
+\end{equation*}
+
+\item Quick Sort
+\begin{equation*}
+\begin{array}{l|ccccccccccccccccc}
+0&16&19&33&10&24&23&41&36&35\\
+1&16&19&10&23&&\textbf{24}&&33&41&36&35\\
+2&16&10&&\textbf{19}&&23&&24&&33&36&35&&\textbf{41}\\
+3&10&&\textbf{16}&&19&&23&&24&&33&35&&\textbf{36}&&41\\
+4&10&&16&&19&&23&&24&&\textbf{33}&&35&&36&&41\\
+5&10&16&19&23&24&33&35&36&41\\
+\end{array}
+\end{equation*}
+
+\end{enumerate}
+
+\Aufgabe{23}
+
+Der sprechende Hut muss einen Algorithmus verwenden, welcher in-place Elemente miteinander vertauscht ($\mathcal{O}(1)$). Heapsort ist im Durchschnitt effizienter als Insertion-, Selection- und Bubble-Sort und hat einen besseren Worst-Case. Zwar ist der Best-Case bei Insertion- oder Bubble-Sort besser, jedoch ist der durchschnittliche Fall wichtiger.
+
+\Aufgabe{24}
+
+Man kann beide Arrays sortieren (zum Beispiel mit Quicksort) und dann miteinander vergleichen ähnlich dem Algorithmus für das Zusammenfügen beim Mergesort. Man geht mit jeweils einem Index über beide Arrays und erhöht den des kleineren Wertes solange, bis beide Elemente wertegleich sind. Nun hat man ein Duplikat gefunden. Damit zwei gleiche Werte nicht doppelt gezählt werden, muss nun ein Index so lange erhöht werden, bis ein neuer Wert erreicht wurde. Der andere Index kann ignoriert werden, da dieser wegen $\mathtt{a[i]\neq b[j]}$ eh erhöht wird. Sobalt man das Ende eines Arrays erreicht hat, bricht der Algorithmus ab.
+
+\Aufgabe{25}
+
+Der Stack ist minimal, falls man immer genau in der Mitte aufteilt, also Pivot Mitte. In diesem Fall wird der Stack nicht größer als $2\cdot\log _2 (n)$, da zwei Werte pro Methodenaufruf auf den Stack kommen. Bei der hier angewendeten Methode ergibt sch im schlimmsten Fall eine Größe von $2n$ also $\mathcal{O}(n)$ da man sonst erst immer das mittlere Element finden müsste.
+
+\end{document}
+

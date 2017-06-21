@@ -1,0 +1,257 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\usepackage{ulem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{3}
+
+\begin{document}
+
+\Aufgabe{8}
+\begin{enumerate} %nr8
+\item %8a
+Die Adjazenzmatrix sei gegeben mit $A_{i,j} \Leftrightarrow v_i \rightarrow v_j$, dass es also einen direkten Weg von $v_i$ nach $v_j$ gibt.
+\begin{equation*}
+A_\mathcal{G}= 
+\bordermatrix{
+~&1&2&3&4&5&6\cr
+1&&&T&&&\cr
+2&&&T&&T&\cr
+3&&&&T&&T\cr
+4&&&T&&&\cr
+5&&T&&&&\cr
+6&T&&&&T&\cr}
+\end{equation*}
+
+\item %8b
+Man startet man mit der Matrix $\hat{A_\mathcal{G}} = B^{(-1)}$. Dabei ist $v_k$ der Knoten $k+1$. Man startet also mit $V_0 = Knoten 1$ und endet bei $B^{(n=5)} = C$. Die einzelnen Matrizen lauten dann\\[1ex]
+$B^{(-1)} = \begin{pmatrix}
+T& &T& & & \\
+ &T&T& &T& \\
+ & &T&T& &T\\
+ & &T&T& & \\
+ &T& & &T& \\
+T& & & &T&T
+\end{pmatrix}$
+$\Rightarrow
+B^{(0)} = \begin{pmatrix}
+T& &T& & & \\
+ &T&T& &T& \\
+ & &T&T& &T\\
+ & &T&T& & \\
+ &T& & &T& \\
+T& &T& &T&T
+\end{pmatrix}$\\[1ex]
+$\Rightarrow
+B^{(1)} = \begin{pmatrix}
+T& &T& & & \\
+ &T&T& &T& \\
+ & &T&T& &T\\
+ & &T&T& & \\
+ &T&T& &T& \\
+T& &T& &T&T
+\end{pmatrix}$
+$\Rightarrow
+B^{(2)} = \begin{pmatrix}
+T& &T&T& &T\\
+ &T&T&T&T& \\
+ & &T&T& &T\\
+ & &T&T& &T\\
+ &T&T&T&T&T\\
+T& &T&T&T&T
+\end{pmatrix}$\\[1ex]
+$\Rightarrow
+B^{(3)} = \begin{pmatrix}
+T& &T&T& &T\\
+ &T&T&T&T&T\\
+ & &T&T& &T\\
+ & &T&T& &T\\
+ &T&T&T&T&T\\
+T& &T&T&T&T
+\end{pmatrix}$
+$\Rightarrow
+B^{(4)} = \begin{pmatrix}
+T& &T&T& &T\\
+ &T&T&T&T&T\\
+ & &T&T& &T\\
+ & &T&T& &T\\
+ &T&T&T&T&T\\
+T&T&T&T&T&T
+\end{pmatrix}$\\[1ex]
+$\Rightarrow
+B^{(5)} = C = \begin{pmatrix}
+T&T&T&T&T&T\\
+T&T&T&T&T&T\\
+T&T&T&T&T&T\\
+T&T&T&T&T&T\\
+T&T&T&T&T&T\\
+T&T&T&T&T&T
+\end{pmatrix}$\\[1ex]
+Man gelangt also von jedem Knoten zu jedem anderen.
+
+\item %8c
+Die Distanzmatrix gibt die Gewichtungen der Kanten wieder. Dabei sind leere Einträge als nicht erreichbar oder unendlich große Distanz zu deuten und jeder Knoten hat zu sich selbst den Abstand 0.
+\begin{equation*}
+L_\mathcal{G'} = 
+\bordermatrix{
+~&0&1&2&3&4&5\cr
+0&0&1&9& & & \cr
+1& &0&6&4&1& \cr
+2& & &0&1& &1\cr
+3& & &1&0& & \cr
+4& &1& & &0& \cr
+5&1& & & &1&0\cr}
+\end{equation*}
+
+\item %8d
+$D^{(-1)} = L_\mathcal{G'} =
+\begin{pmatrix}
+0&1&9& & & \\
+ &0&6&4&1& \\
+ & &0&1& &1\\
+ & &1&0& & \\
+ &1& & &0& \\
+1& & & &1&0
+\end{pmatrix}$
+$\Rightarrow
+D^{(0)} = 
+\begin{pmatrix}
+0&1&9& & & \\
+ &0&6&4&1& \\
+ & &0&1& &1\\
+ & &1&0& & \\
+ &1& & &0& \\
+1&2&10& &1&0
+\end{pmatrix}$\\[1ex]
+$\Rightarrow
+D^{(1)} = 
+\begin{pmatrix}
+0&1&7& & & \\
+ &0&6&4&1& \\
+ & &0&1& &1\\
+ & &1&0& & \\
+ &1& & &0& \\
+1&2&10& &1&0
+\end{pmatrix}$
+$\Rightarrow
+D^{(2)} = 
+\begin{pmatrix}
+0&1&7&5&2&8\\
+ &0&6&4&1&7\\
+ & &0&1& &1\\
+ & &1&0& &2\\
+ &1&7&5&0&8\\
+1&2&8&6&1&0
+\end{pmatrix}$\\[1ex]
+$\Rightarrow
+D^{(3)} = 
+\begin{pmatrix}
+0&1&7&5&2&7\\
+ &0&6&4&1&6\\
+ & &0&1& &1\\
+ & &1&0& &2\\
+ &1&7&5&0&7\\
+1&2&8&6&1&0
+\end{pmatrix}$
+$\Rightarrow
+D^{(4)} = 
+\begin{pmatrix}
+0&1&7&5&2&7\\
+ &0&6&4&1&6\\
+ & &0&1& &1\\
+ & &1&0& &2\\
+ &1&7&5&0&7\\
+1&2&8&6&1&0
+\end{pmatrix}$\\[1ex]
+$\Rightarrow
+D^{(5)} = D =
+\begin{pmatrix}
+0&1&7&5&2&7\\
+7&0&6&4&1&6\\
+2&3&0&1&2&1\\
+3&4&1&0&3&2\\
+8&1&7&5&0&7\\
+1&2&8&6&1&0
+\end{pmatrix}$
+\end{enumerate} %nr8
+
+\Aufgabe{9}
+Man betrachte die Gleichung $\sqrt{a} = x \Rightarrow f(x) = x^2 - a = 0$, wobei $a = 0.80 \cdot 10^2$. Nun lässt sich die Ableitung allgemein berechnen mit $f'(x) = 2x$. Dadurch gibt sich nach der Newton Methode $x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} = x_i - \frac{x_i^2 - a}{2x_i} = \frac{1}{2} \left ( x_i + \frac{a}{x_i} \right )$. Dabei muss man die Rechnung in die einzelnen Rechenschritte unterteilen. Man definiere also die Hilfsvariablen $t_0 \hat{=} \frac{a}{x_i}$ und $t_1 \hat{=} x_i + t_0$ und dem entsprechend ebenso $x_{i+1} = \frac{t_1}{2}$. Die einzelnen Rechenschritte lauten: 
+\begin{description}
+\item [$i=0$]
+Der Startwert ist vorgegeben mit $x_0 \hat{=} +0.10 \cdot 10^{+2}$.
+
+\item [$i=1$]
+$t_0 = \frac{a}{x_0} = \frac{0.80 \cdot 10^2}{0.10 \cdot 10^2} =0.80 \cdot 10^1$\\
+$t_1 = x_0 + t_0 = 0.10 \cdot 10^2 + 0.80 \cdot 10^1 = 0.18 \cdot 10^2$\\
+$x_1 = \frac{t_1}{2} = \frac{0.18 \cdot 10^2}{0.20 \cdot 10^1} = 0.90 \cdot 10^1$
+
+\item [$i=2$]
+$t_0 = \frac{a}{x_1} = \frac{0.80 \cdot 10^2}{0.90 \cdot 10^1} =0.88 \cdot 10^1$\\
+$t_1 = x_1 + t_0 = 0.90 \cdot 10^1 + 0.88 \cdot 10^1 = 0.17\xout{8} \cdot 10^2$\\
+$x_2 = \frac{t_1}{2} = \frac{0.17 \cdot 10^2}{0.20 \cdot 10^1} = 0.85 \cdot 10^1$
+
+\item [$i=3$]
+$t_0 = \frac{a}{x_2} = \frac{0.80 \cdot 10^2}{0.85 \cdot 10^1} =0.94 \cdot 10^1$\\
+$t_1 = x_2 + t_0 = 0.85 \cdot 10^1 + 0.94 \cdot 10^1 = 0.17\xout{9} \cdot 10^2$\\
+$x_3 = \frac{t_1}{2} = \frac{0.17 \cdot 10^2}{0.20 \cdot 10^1} = 0.85 \cdot 10^1 = x_2$
+\end{description}
+Da hier keine weitere Veränderung mehr erwartet werden kann, ist die Berechnung abgeschlossen. In $\mathcal{S}$ ist die Quadratwurzel von $0.80 \cdot 10^2 = 0.85 \cdot 10^1$.
+
+\Aufgabe{10}
+Da die Zimmer abzählbar sind, hat jedes eine eindeutige Nummer mit $Z_n, n\in \N$.
+\begin{enumerate}
+\item %a
+Jede Person muss ein Zimmer aufrücken, sodass $Z_n \rightarrow Z_n+1$ und das erste Zimmer für den Informatiker frei wird $I \rightarrow Z_1$.
+\item %b
+Jede Person muss 50 Zimmer aufrücken, das heißt $Z_n \rightarrow Z_{n+50}$ und die ersten 50 Zimmer frei werden $I_k \rightarrow Z_k, k\in[1,50]$.
+\item %c
+Da es unendlich viele Informatiker sind, kann man nicht um eine feste Zahl aufrücken. Zieht jede Person in das Zimmer mit der doppelten Nummer $Z_n \rightarrow Z_{2n}$, dann gibt es unendlich leere Zimmer $Z_{2n-1}$ für die Informatiker, also $I_k \rightarrow Z_{2k-1}, k\in\N$. Dadurch kann es vorkommen, dass zwischen zwei Zimmern ein Zimmer leer ist. Außerdem haben Personen in höhernummerierten Zimmern einen längeren Weg zu ihrem neuen Zimmer. In jedem Fall müssen alle Personen das Zimmer wechseln.
+\end{enumerate}
+
+\Aufgabe{11}
+\begin{enumerate}
+\item %a
+Wie in Aufgabe 10 gesehen, können mehrere abzählbare unendliche Mengen eindeutig in einer vereint werden. Da die Speicherzellen der RISC-Machine unendlich groß sind, kann man das auch auf diese übertragen. Das Vorzeichen eines \texttt{Integers} sei $s_k$, die einzelnen Dezimalstellen durch $d_{k,n}$ und die der RISC durch $r_n$ beschrieben.\\
+Nun setze man $r_0 = s_0$, $r_1 = s_1$, $r_2 = s_2$ um die Vorzeichen zu speichern. Die ersten Dezimalstellen können durch $r_3 = d_{0,0}$, $r_4 = d_{1,0}$, $r_5 = d_{2,0}$ eingespeichert werden. Für jede Dezimalstelle eines \texttt{Integers} gibt es also genau eine Dezimalstelle in der Speicherzelle mit $d_{k, n} = r_{3n+k+3}$.
+
+\setcounter{enumi}{2}
+\item %c
+Bei bestimmten Zahlen werden die Integergrenzen überschritten und die Kodierung ist nicht mehr symmetrisch, also fehlerhaft.
+
+\item %d
+Um das Problem zu umgehen, könnte man zum Beispiel die folgenden Änderungen vornehmen.
+\begin{itemize}
+\item Verwendung von modularer Arithmetik
+\item Größere Datentypen wie z. B. long
+\item Verschiebung der Zahlen ins Negative
+\item Bessere Aufgabenstellung, da in (c) die Kodierung des Vorzeichens nicht geklärt ist
+\end{itemize}
+\end{enumerate}
+\end{document}

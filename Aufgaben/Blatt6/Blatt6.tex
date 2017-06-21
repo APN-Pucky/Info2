@@ -1,0 +1,47 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{6}
+
+\begin{document}
+
+\Aufgabe{20}
+
+\begin{enumerate}
+\item Der Algorithmus durchläuft das noch nicht sortierte Array und tauscht jeweils benachbarte Paare, sodass $\mathtt{a[i+1] >= a[i]}$. Dieser Vorgang wird so lange wiederholt, bis keine Arrayeinträge mehr vertauscht worden sind und somit alle Einträge in aufsteigender Folge sortiert sind.
+\item Da die $\mathtt{run}$-Variable pro Durchlauf inkrementiert wird, erreicht sie irgendwann den Wert $\mathtt{a.length}$. Da nun die innere Schleife nicht mehr durchlaufen wird, bleibt auch die $\mathtt{vertauscht}$-Variable zwangsweise $\mathtt{false}$ und der Algorithmus terminiert.
+\item Der worst-case ist $\mathcal{O}(n^2)$, da die äußere Schleife aufgrund der in (b) genannten Inkrementierung höchstens n-mal und die innere Schleife ebenso maximal n-mal durchlaufen wird. Dabei sei anzumerken, dass die innere Schleife pro Durchlauf der äußeren Schleife einmal weniger durchlaufen wird und somit die eigentliche Laufzeit $\frac{1}{2}n^2$ lautet, was in der $\mathcal{O}$-Notation auf die selbe Menge deutet.\\
+Der Algorithmus unternimmt maximal $\frac{n\cdot(n-1)}{2}$-Tauschoperationen.
+
+\end{enumerate}
+
+\end{document}
+

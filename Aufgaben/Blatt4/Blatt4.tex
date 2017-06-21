@@ -1,0 +1,276 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{4}
+
+\begin{document}
+
+\Aufgabe{12}
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+
+\item \texttt{\\
+STJ a, a, .+1 \quad a=0
+}
+
+\item \texttt{\\
+STJ a, a, .+1 \quad a=0\\
+STJ t, t, .+1 \quad t=0\\
+STJ t, 1, .+1 \quad t=-1\\
+STJ a, t, .+1 \quad a=1
+}
+
+\item \texttt{\\
+STJ a, b, .+1 \quad a=a-b
+}
+
+\item \texttt{\\
+STJ a, a, .+1 \quad a=0\\
+STJ a, b, .+1 \quad a=-b\\
+}
+
+\item \texttt{\\
+STJ a, a, .+1 \quad a=0\\
+STJ t, t, .+1 \quad t=0\\
+STJ t, b, .+1 \quad t=-b\\
+STJ a, t, .+1 \quad a=b
+}
+
+\item \texttt{\\
+STJ t, t, .+1 \quad t=0\\
+STJ k, k, .+1 \quad k=0\\
+STJ t, a, .+1 \quad t=-a\\
+STJ k, t, .+1 \quad k=a\\
+STJ a, a, .+1 \quad a=0\\
+STJ a, k, .+1 \quad a=-a
+}
+
+\item \texttt{\\
+STJ t, t, .+1 \quad t=0\\
+STJ t, b, .+1 \quad t=-b\\
+STJ a, t, .+1 \quad a=a+b
+}
+
+\item \texttt{\\
+STJ 0, 0, x \quad JMP x
+}
+
+\item \texttt{\\
+STJ t, t, .+1 \quad t=0\\
+STJ a, t, x \quad a-0 $\leq$ 0
+}
+
+\item \texttt{\\
+STJ t, t, .+1 \quad t=0\\
+STJ t, a, x \quad 0-a $\leq$ 0
+}
+
+\item \texttt{\\
+STJ t, t, .+1 \quad t=0\\
+STJ a, t, .+2 \quad a $\leq$ 0\\
+STJ 0, 0, .+2 \quad else JMP to end\\
+STJ t, a, x \quad a $\geq$ 0 
+}
+
+\item \texttt{\\
+STJ a, b, .+1 \quad a-b $\leq$ 0\\
+STJ t, t, .+1 \quad t=0\\
+STJ 0, a, x \quad b-a $\leq$ 0 $\Rightarrow$ JMP x
+}
+
+\end{enumerate}
+
+\begin{enumerate}
+\item \texttt{\\
+a:=0\\
+if(c<=0) then goto y\\
+goto z\\
+:label y\\
+b:=-b\\
+c:=-c\\
+:label z\\
+if(c>=1) then goto x\\
+goto e\\
+:label x\\
+a:=a+b\\
+c:=c-1\\
+goto z\\
+:label e
+}
+
+\item \texttt{\\
+if(b<=0) then goto y\\
+goto e\\
+:label y\\
+b:=-b\\
+:label e
+}
+
+\item \texttt{\\
+i:=0\\
+ac:=|c|\\
+ab:=|b|\\
+:label z\\
+i:=i+1\\
+t:=ac*i\\
+if(ab>=t) then goto z\\
+i:=i-1\\
+t:=b*c\\
+if(t<=0) then goto x\\
+goto end\\
+:label x\\
+k:=-1\\
+i:=i*k\\
+t:=i*c\\
+t:=t-b\\
+i:=i-1\\
+if(t=0) then goto l\\
+goto end\\
+:label l\\
+i:=i+1\\
+:label end
+}
+
+\item \texttt{\\
+if(c=0) then goto k\\
+dbc:=b div c\\
+t:=c*dbc\\
+x:=x-t\\
+goto end\\
+:label k\\
+a:=b\\
+:label end
+}
+
+\item \texttt{\\
+if(b>=c) then goto z\\
+a:=b\\
+goto end\\
+:label z\\
+a:=c\\
+:label end
+}
+
+\item \texttt{\\
+:label z\\
+if(c=0)then goto end\\
+r:=b mod c\\
+c:=b\\
+b:=r\\
+goto z\\
+a:=b\\
+}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\Aufgabe{13}
+
+\begin{enumerate}
+\item
+Nach der Matrizenmultiplikation muss gelten:
+\begin{equation*}
+\begin{array}{c}
+A = E \cdot I + F \cdot K\\
+B = E \cdot J + F \cdot L\\
+C = G \cdot I + H \cdot K\\
+D = G \cdot J + H \cdot L
+\end{array}
+\end{equation*}
+Durch die gegebenen Gleichungen ergibt sich
+\begin{equation*}
+\begin{array}{rcl}
+A & = & m_2 + m_3\\
+~ & = & E I + F K\\
+B & = & t_1 + m_5 + m_6\\
+~ & = & m_1 + m_2 + m_5 + m_6\\
+~ & = & s_2 s_6 + E I + s_1 s_5 + s_4 L\\
+~ & = & (s_1 - E) (L - s_5) + E I + (G + H) (J - I) + (F - s_2) L\\
+~ & = & (G + H - E) (L - J + I) + E I + (G + H) (J - I) + (F - G - H + E) L\\
+~ & = & GL - GJ + GI + HL - HJ + HI - EL + EJ - EI + EI + GJ - GI\\
+~ & ~ & + HJ - HI + FL - GL - HL + EL\\
+~ & = & EJ + FL\\
+C & = & t_2 - m_7\\
+~ & = & t_1 + m_4 - H s_8\\
+~ & = & m_1 + m_2 + s_3 s_7 - H (s_6 - K)\\
+~ & = & s_2 s_6 + EI + (E - G) (L - J) - H (L - s_5 - K)\\
+~ & = & (s_1 - E) (L - s_5) + EI + (E-G) (L-J) - H (L - J + I - K)\\
+~ & = & (G+H-E)(L-J+I) + EI + (E-G)(L-J)\\
+~ & = & GL-GJ+GI+HL-HJ+HI-EL+EJ-EI+EI\\
+~ & ~ & +EL-EJ-GL+GJ-HL+HJ-HI+HK\\
+~ & = & GI+HK\\
+D & = & t_2 + m_5\\
+~ & = & t_1 + m_4 + s_1 s_5\\
+~ & = & m_1 + m_2 + s_3 s_7 + (G+H) (J-I)\\
+~ & = & s_2 s_6 + EI + (E-G) (L-J) + (G+H) (J-I)\\
+~ & = & (s_1-E) (L-s_5) + EI + (E-G) (L-J) + (G+H) (J-I)\\
+~ & = & (G+H-E) (L-J+I) + EI + (E-G) (L-J) + (G+H) (J-I)\\
+~ & = & GL-GJ+GI+HL-HJ+HI-EL+EJ-EI\\
+~ & ~ & +EI+EL-EJ-GL+GJ+GJ-GI+HJ-HI\\
+~ & = & HL+GJ
+\end{array}
+\end{equation*}
+Also stimmt der Rechenweg über die Teilrechnungen mit der normalen Matrizenmulltiplikation überein.
+
+\item
+Der Algorithmus besteht aus 7 Multiplikationen und 15 Additionen. Nach der Rechnung auf den Folien ergibt sich.
+\begin{equation*}
+\begin{array}{rl}
+T(n) & = 7 T \left ( \frac{n}{2} \right ) + 15 { \left ( \frac{n}{2} \right ) }^2 = 7 \left [ 7 \left ( \frac{n}{4} \right ) + 15 { \left ( \frac{n}{4} \right ) }^2 \right ] + 15 { \left ( \frac{n}{2} \right ) }^2\\
+& = \dots \Rightarrow \mathcal{O}(n^{2.807})
+\end{array}
+\end{equation*}
+
+\end{enumerate}
+
+\Aufgabe{13}
+
+\begin{enumerate}
+\item
+$(1)$ Sagt aus, dass die Funktion $f$, bis auf einen gewählten festen Faktor $c$, immer (d. h. für alle $n$, da $f$ unabhängig von $n$) kleiner als die Funktion $g$ ist.\\
+$(2)$ Sagt aus, dass die Funktion $f$, bis auf einen gewählten festen Faktor $c$, ab einem $n \geq n_0$ immer kleiner als die Funktion $g$ ist.\\
+\begin{description}
+\item [$(1) \Rightarrow (2)$] offensichtlich; Gilt für alle $n$, mit $n_0 = 0$; $c$ bleibt gleich.
+\item [$(2) \Rightarrow (2)$] $c$ muss so gewählt werden, dass $n_0=0$ wird. Dies ist immer möglich, da $c$ beeliebig hoch gewählt werden kann um $f(n) \leq c \cdot g(n)$ zu erfüllen. Wobei immer gilt $g(n) \neq 0$.
+
+\end{description}
+
+\item Damit $\frac{f(n)}{g(n)}$ gegen null konvertiert, müsste $g(n) > f(n)$ ab einem bestimmten $n_0$ gelten und somit $g(n)$ schneller als $f(n)$ wachsen. Da dies eine mächtigere Aussage wie $(2)$ wäre, es also kein $n_0$ gäbe, folgt $f(n) = \mathcal{O} \big (g(n) \big )$.
+
+\item
+Die Funktionen $f_7$ und $f_6$ sind komplexer als die Funktionen $f_9$ und $f_{10}$.
+\end{enumerate}
+
+\end{document}
+
