@@ -1,0 +1,11 @@
+Aufgabe 33:
+a)
+Datentyp: DEQUEUE
+create: 			->	DEQUEUE
+enqueuef:	ELEM x DEQUEUE 	-> 	DEQUEUE
+enqueueb:	ELEM x DEQUEUE	-> 	DEQUEUE
+empty:		DEQUEUE		->	BOOL
+front:		DEQUEUE		->	ELEM
+back:		DEQUEUE		->	ELEM
+dequeuef: 	DEQUEUE		->	DEQUEUE
+dequeueb:	DEQUEUE		->	DEQUEUE
