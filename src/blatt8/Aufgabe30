@@ -1,9 +1,9 @@
 Aufgabe 30:
 a)
 f_1: n^4
-f_2: n*log_2(n)^2
+f_2: n*log(n)^2
 f_3: n^2
-f_4: 
+f_4: log(n)^2
 
 b)
 f = n*log_2(n)
