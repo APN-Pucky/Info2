@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%             template.tex                                                              %
+%                                                                                       %
+%            Author: Sergej Lewin 10/2008                                               %
+%                                                                                       %    
+% !!!Man braucht noch die Datei Ueb.sty (im gleichen Ordner wie die Hauptdatei)!!!      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{article}             % bestimmt das Aussehen eines Dokuments
+\usepackage{Ueb}                                  % vordefinierte Makros
+\usepackage{enumitem}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{(\roman{enumii})}
+
+%!!!!anpassen an das Betriebssystem!!!, um Umlaute zu verwenden
+\usepackage[utf8]{inputenc}                      %Linux
+%\usepackage[latin1]{inputenc}                    %Windows
+%\usepackage[applemac]{inputenc}                  %Mac
+
+
+
+%Namen und Matrikelnummern anpassen
+%\zweinamen{Name1}{Matrikelnummer1}{Name2}{Matrikelnummer2} %2er Gruppen
+\dreinamen{Alexander Neuwirth}{439218}{Leonhard Segger}{440145}{Jonathan Sigrist}{441760} %3er Gruppe
+
+%Briefkastennummer anpassen. z. B. \briefkasten{104}
+\briefkasten{}
+
+%Termin der Uebungsgruppe und Raum anpassen z. B. \termin{Mo. 12-14 , SR2}
+\termin{Fr. 08-10, SR217}
+
+%Blattnummer anpassen z. B. \blatt{5}
+\blatt{8}
+
+\begin{document}
+
+\Aufgabe{26}
+\begin{enumerate}
+\item Da stets $M_{ij} = - M_{ji}$, gilt auf der Hauptdiagonalen ebenso $M_{ii} = -M_{ii} \Rightarrow 0 = -0$. Dementsprechend muss auf der Hauptdiagonalen $M_{ii} = 0$ sein.
+
+\item Man muss nur die Werte für $j > i$ speichern, da die Hauptdiagonale immer $0$ ist und die andere Seite dieser durch die Forderung $M_{ij} = -M_{ji}$ bekannt sind.
+\end{enumerate}
+
+\Aufgabe{27}
+\begin{enumerate}
+\item Es seien die beiden Funktionen \texttt{min} und \texttt{max} definiert mit:
+\begin{itemize}
+\item
+$\texttt{min: DICT -> ELEM}$\\
+$\texttt{min(create) = ERROR}$\\
+$\texttt{min(insert(E, create)) = E}$\\
+$\texttt{min(insert(E, D)) = min}_{\texttt{ELEM}}\texttt{(E, min(D))}$
+
+\item
+$\texttt{max: DICT -> ELEM}$\\
+$\texttt{max(create) = ERROR}$\\
+$\texttt{max(insert(E, create)) = E}$\\
+$\texttt{max(insert(E, D)) = max}_{\texttt{ELEM}}\texttt{(E, max(D))}$
+\end{itemize}
+
+\item Es seien die beiden Funktionen \texttt{succ} und \texttt{pred} definiert mit:
+\begin{itemize}
+\item
+$\texttt{succ: ELEM x DICT -> ELEM}$\\
+$\texttt{succ(E, insert(E, create)) = largestElem}$\\
+$\texttt{succ(E, D) = if isequal}_{\texttt{ELEM}}\texttt{(E,min(D)) then min(delete(E,D)) else succ(E,delete(min(D),D))}$\\
+
+\item
+$\texttt{pred: ELEM x DICT -> ELEM}$\\
+$\texttt{pred(E, insert(E, create)) = smallestElem}$\\
+$\texttt{pred(E, D) = if isequal}_{\texttt{ELEM}}\texttt{(E,max(D)) then max(delete(E,D)) else pred(E,delete(max(D),D))}$\\
+
+\end{itemize}
+\end{enumerate}
+
+\Aufgabe{28}
+Die Laufzeit des Programms ist $n(2b+1)\cdot(2b+1) = \mathcal{O}(nb^2)$.
+
+\Aufgabe{29}
+\begin{enumerate}
+\item Zuerst ist das Array mit $\mathcal O(n\log n)$ zu sortieren. Dann sucht man für jedes Element binär nach einem Partner-Element ($\mathcal O(n\log n)$) mit $\texttt{values[i]+values[j]} = \texttt{sum}$. Da alle Werte in $\texttt{values}$ paarweise verschieden sind, enthält das Ergebnis auch keine Duplikate.
+\end{enumerate}
+
+\Aufgabe{30}
+\begin{enumerate}
+\item
+\begin{itemize}
+\item $f_1=n^4$
+\item $f_2=n\cdot\log^2n$
+\item $f_3=n^2$
+\item $f_4=\log^2n$
+\end{itemize}
+
+\item Die Funktionen $f(n) = \log_2(n^n) = n\cdot\log_2 n$ und $g(n)=n^2\log_2 n$ werden im Grenzfall $\lim\limits_{n\to\infty}\frac{f}{g}(n)=\lim\limits_{n\to\infty}\frac{1}{n}=0\Rightarrow f=\mathcal O(g)$. Das wurde bereits in Aufgabe 14 b) gezeigt.
+
+\item $f=n\log_4 n = n\frac{\log_2 n}{\log_2 4} = \frac{1}{2} n\log_2 n$ und $g=n\log_2 n$. Da $f=c\cdot g$ mit $c=\frac{1}{2}$ gilt $f\in\Omega(g)$.
+
+\item Sei $g=\log_2 n$. Dann $\exists c>0,n_0 \forall n>n_0 | f(n) \leq c\cdot g(n)$ mit $n_0 = 42$ und $c=1$, also $\forall n>42|f(n) = g(n)$ und somit $f\in\mathcal O(g)$.
+\end{enumerate}
+
+\end{document}
+
