@@ -1,7 +1,8 @@
 Aufgabe 24:
 
-Man kann beide Arrays sortierten mittels Quicksort. Und Dann die sortierten Werte vergleichen:
-
+Man kann beide Arrays sortierten mittels Quicksort. Und Dann die sortierten Werte vergleichen: //Streng genommen darf man hier nicht Quicksort schreiben, weil muss nlog(n) sein und nie n^2 laut Eric
+//außerdem wtf geht mit der Rechtschreibung in der Abgabe, dat is ja higher level vong der Falschigkeit her.
+//und bei A25 stimmt des laut eric net ganz, weil der Stack maximal ist, wenn man immer an der Hälfte teilt.
 int[] a;
 int[] b;
 
