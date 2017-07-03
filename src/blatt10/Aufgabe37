@@ -1,0 +1,171 @@
+Aufgabe 37:
+a)i)
+
+1)		20
+
+2)		20,40
+
+3)		20,40,60
+
+4)		20,40,60,80
+
+5)		20,40,60,80,99
+
+6)		  60
+	20,40,50	80,99
+
+7)		  60
+	20,40,50	70,80,99
+
+8)		     60
+	20,30,40,50	   70,80,99
+
+9)		       60
+	10,20,30,40,50	   70,80,99
+
+10)		       30,60
+	10,20,22       40,50	   70,80,99
+
+11)		       30,60
+	10,20,22,23    40,50	   70,80,99
+
+12)		       30,60
+     10,20,22,23,24    40,50	   70,80,99
+
+13)		       22,30,60
+     10,20      23,24,25    40,50	   70,80,99
+
+14)		       22,30,60
+     10,20      23,24,25,26    40,50	   70,80,99
+
+15)		       22,30,60
+     10,20    23,24,25,26,27   40,50	   70,80,99
+
+16)		       22,30,60
+     10,20    23,24,25,26,27   40,50	   70,80,90,99
+
+17)		       22,30,60
+     10,20    23,24,25,26,27   40,50	   70,80,88,90,99
+
+18)		       22,30,60
+     10,20    23,24,25,26,27   40,42,50	   70,80,88,90,99
+
+19)		       22,30,60
+     10,20    23,24,25,26,27   40,42,44,50	   70,80,88,90,99
+
+20)		       22,30,60
+     10,20    23,24,25,26,27   40,42,44,48,50	   70,80,88,90,99
+
+21)		       22,30,60,88
+     10,20    23,24,25,26,27   40,42,44,48,50	  70,79,80  90,99
+
+22)		       22,30,60,88
+     10,20    23,24,25,26,27   40,42,44,48,50	  70,79,80,81  90,99
+
+23)		       22,30,60,88
+     10,20    23,24,25,26,27   40,42,44,48,50	  70,79,80,81,84  90,99
+
+24)		       22,30,60,80,88
+     10,20    23,24,25,26,27   40,42,44,48,50	  70,79  81,84,86  90,99
+
+
+a)ii)
+
+1)		       23,30,60,80,88
+     10,22    24,25,26,27   40,42,44,48,50	  70,79  81,84,86  90,99
+
+2)		       23,30,60,80,88
+     10,22    24,25,26,27   42,44,48,50	  70,79  81,84,86  90,99
+
+3)		       23,30,50,80,88
+     10,22    24,25,26,27   42,44,48	  70,79  81,84,86  90,99
+
+4)		       23,30,50,81,88
+     10,22    24,25,26,27   42,44,48	  70,79  84,86  90,99
+
+5)		       23,30,50,81
+     10,22    24,25,26,27   42,44,48	  70,79  84,86,88,90
+
+6)		       23,30,48,81
+     10,22    24,25,26,27   42,44	  70,79  84,86,88,90
+
+7)		       23,30,48,84
+     10,22    24,25,26,27     42,44	79,81  86,88,90
+
+8)		       23,27,48,84
+     10,22    24,25,26     42,44	79,81  86,88,90
+
+9)		       24,27,48,84
+     22,23    25,26     42,44	79,81  86,88,90
+
+10)		       27,48,84
+     23,24,25,26     42,44	79,81  86,88,90
+
+11)		       27,48,84
+     24,25,26     42,44	79,81  86,88,90
+
+12)		       27,48,84
+     25,26     42,44	79,81  86,88,90
+
+13)		       48,84
+     26,27,42,44	79,81  86,88,90
+
+14)		       48,84
+     26,27,42,44	79,81  86,88,90
+
+15)		       48,84
+     27,42,44	79,81  86,88,90
+
+16)		       48,84
+     42,44	79,81  86,88,90
+
+17)		       48,84
+     42,44	       79,81       86,88
+
+18)		       48
+     42,44	             79,81,84,86
+
+19)		       79
+     44,48	             81,84,86
+
+20)		       81
+     48,79	             84,86
+
+21)   79,81,84,86
+
+22)   81,84,86
+
+23)   84,86
+
+24)   86
+
+25)   
+
+b)
+i)
+
+1.Fall: B ist Blatt:
+	Vorgänger ist linker Nachbar von B, falls dieser nicht existiert ist der Vorgänger der linke Vaterknoten. Falls der linke Vaterknoten auch nicht existiert so wiederhohlt sich der Prozess für den Vaterknoten des Vaterknotens. [Der erste (= n kleinst möglich) linke n-fache-Vaterknoten ist der Vorgänger] (außer Minimum)
+	
+	Nachfolger ist rechter Nachbar, falls dieser nicht existiert ist der Vorgänger der rechte Vaterknoten. Falls der rechte Vaterknoten auch nicht existiert so wiederhohlt sich der Prozess für den Vaterknoten des Vaterknotens. [Der erste (= n kleinst möglich) rechte n-fache-Vaterknoten ist der Nachfolger]  (außer Maximum)
+
+2.Fall: B ist innerer Knoten:
+	Vorgänger ist das Maximum der Elemente im linken Kinderknoten.
+
+	Nachfolger ist das Minimum der Elemente im rechten Kinderknoten.
+
+Laufzeit: 	Das finden des B Elements braucht O(log(n)).
+		Die Position des Maximums bzw. Minimums in einem Teilbaum ist bekannt, daher ist der Aufwand geringer als O(log(n)). Die Nachbarn können mit O(1) abgefragt werden. Im Worst-case ergibt sich für ein Blatt-Nachbarn erneut O(log(n)), da man bis zur Wurzel den Baum aufwärts nach einem Nachbarn prüft.
+
+In Summe lassen sich die Vorgänger und Nachfolger mit O(log(n)) bestimmen.
+
+b)
+ii)
+
+Jeder Knoten enthält zusätzlich einen Speicher für Vorgänger und Nachfolger. 
+
+Falls ein neues Element eingefügt wird, wird der Vorgänger bzw. Nachfolger bestimmt und deren Nachfolger bzw. Vorgänger Speicher geändert (ersetzt durch neues Element). Diese Operation braucht immer noch O(log(n)).
+
+Beim Löschen lassen sich die Nachfolger und Vorgänger des zu löschenden Elements auch mit O(log(n)) bestimmen und deren Vorgänger bzw. Nachfolger -Variablen auf einander verweisen lassen. Somit hat auch diese Operation noch eine Laufzeit von O(log(n))
+
+Vorgänger und Nachfolger lassen sich nun mit O(1) bestimmen.
