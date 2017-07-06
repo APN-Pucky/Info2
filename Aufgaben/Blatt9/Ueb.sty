@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Ueb.sty                                                       %
+%                                                                     %
+%	Author: Sergej Lewin 10/2008                                  %
+%                                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[ngerman]{babel}         % Neue deutsche Rechtschreibung
+\usepackage[T1]{fontenc}            % Bessere Schriftdarstellung
+\usepackage{lmodern}                % Aktuelle Schrift
+
+\usepackage[intlimits]{amsmath}     % Zusaetzliche Matheumgebungen
+\usepackage{amssymb}                % Mathematische Symbole
+\usepackage{graphicx}               % notwendig fuer \includegraphics
+\usepackage{fancyhdr}               % Kopf- und Fusszeile
+\usepackage{lastpage}               % erzeugt Referez zu der letzten Seite
+\usepackage{moreverb}               % verbatimtab Umgeung
+
+
+% Seiteneinstelungen
+\setlength\textwidth{165mm}           % Breite
+\setlength\textheight{235mm}          % Hoehe
+\setlength\headheight{41pt}           % Hoehe der Kopfzeile
+\setlength\topmargin{-12mm}           % Abstand oben
+\setlength\oddsidemargin{0mm}         % Linker Rand
+\setlength\parindent{0pt}             % und ohne Einrueckung
+\setlength\parskip{1.7\medskipamount} % Absaetze abgesetzt
+\sloppy\pagestyle{fancy}
+
+%Kopf- und Fusszeileeinstellungen
+\renewcommand{\headrulewidth}{0.4pt} 	%obere Trennlinie
+\fancyfoot[C]{Seite:~\thepage~von~\pageref{LastPage}} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} 	%untere Trennlinie
+
+% Ein paar hilfreiche Zeichen
+\newcommand{\R}{\mathbb{R}}                 % reelle Zahlen
+\newcommand{\N}{\mathbb{N}}                 % natuerliche Zahlen
+\newcommand{\e}{\text{e}}                   % eulersche Zahl
+\newcommand{\E}[1]{\cdot10^{#1}}            % x 10^{...}
+\newcommand{\qed}{\hspace*{\fill}q.e.d.}    % Beweis fertig
+\newcommand{\ON}[1]{{\cal O}(#1)}	    %O-Notation
+\newcommand{\Aufgabe}[1]{{\vskip5mm\bf Aufgabe #1.\\}}
+
+\def\vblatt{~}
+\def\vterm{~}
+\def\vbriefkasten{~}
+%Blattnummer, Abgabedatum und Namen mir Matrikelnummern in der Kopfzeile anpassen
+\newcommand{\dreinamen}[6]{\fancyhead[R]{#1 (#2)\\#3 (#4)\\#5 (#6)}} %Kopfzeile rechts
+\newcommand{\zweinamen}[4]{\fancyhead[R]{#1 (#2)\\#3 (#4)}}
+\fancyhead[C]{\large{\bf{Blatt \vblatt }}}
+\fancyhead[L]{Informatik II (SS2017) \\ \"Ubungsgruppe: \vtermin }%\\Briefkasten: \vbriefkasten }
+
+\newcommand{\blatt}[1]{\def\vblatt{#1}}
+\newcommand{\termin}[1]{\def\vtermin{#1}}
+\newcommand{\briefkasten}[1]{\def\vbriefkasten{#1}}

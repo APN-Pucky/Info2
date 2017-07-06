@@ -1,9 +1,14 @@
 package blatt9;
 
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.util.Random;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * Visualisierung eines int-Arrays, sowie Unterstuetzung fuer die Animation von
