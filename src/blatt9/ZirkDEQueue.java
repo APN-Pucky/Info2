@@ -1,92 +1,90 @@
-//not Thread-safe
-public class ZirkDEQueue<E> implements DEQueue<E>
-{
+package blatt9;
+
+/**
+ * @author Alexander Neuwirth
+ * @author Leonhard Segger
+ * @author Jonathan SIgrist
+ *
+ * @param <E>
+ *            Datentyp der DEQueue
+ */
+public class ZirkDEQueue<E> implements DEQueue<E> {
 	private E[] b;
 	private int front = 0;
 	private int back = 0;
 
-	public ZirkDEQueue(int maxsize)
-	{
-		b = (E[])new Object[maxsize+1];
+	/**
+	 * Konstruktor: Erstellt eine zirkulaere Double-End-Queue mit maximaler
+	 * Groesse
+	 * 
+	 * @param maxsize
+	 *            maximale Groesse der DEQueue
+	 */
+	@SuppressWarnings("unchecked")
+	public ZirkDEQueue(int maxsize) {
+		b = (E[]) new Object[maxsize + 1];
 	}
 
-	public boolean full()
-	{
-		return ((front+1)%b.length == back);
+	/**
+	 * Gibt zurueck, ob die DEQueue voll ist, also alle Speicherplaetze elegt
+	 * sind.
+	 * 
+	 * @return true, falls kein freier Speicherplatz vorhanden; sonst false
+	 */
+	public boolean full() {
+		return ((front + 1) % b.length == back);
 	}
 
-	public boolean empty()
-	{
+	public boolean empty() {
 		return front == back;
 	}
 
-	public void enqueuef(E elem)
-	{
-		if(full())
-		{
-		}
-		else 
-		{
-			b[front]=elem;
-			front= (front+1)%b.length;
+	public void enqueuefront(E elem) {
+		if (full()) {
+			throw new ZirkSpeicherOverflowException();
+		} else {
+			b[front] = elem;
+			front = (front + 1) % b.length;
 		}
 	}
 
-	public void enqueueb(E elem)
-	{
-		if(full())
-		{
-		}
-		else 
-		{
-			back = (back-1+b.length)%b.length;
-			b[back]=elem;
+	public void enqueueback(E elem) {
+		if (full()) {
+			throw new ZirkSpeicherOverflowException();
+		} else {
+			back = (back - 1 + b.length) % b.length;
+			b[back] = elem;
 		}
 	}
 
-	public E front()
-	{
-		if(empty())
-		{
+	public E front() {
+		if (empty()) {
 			return null;
-		}
-		else
-		{
-			return b[(front-1+b.length)%b.length];
+		} else {
+			return b[(front - 1 + b.length) % b.length];
 		}
 	}
 
-	public E back()
-	{
-		if(empty())
-		{
+	public E back() {
+		if (empty()) {
 			return null;
-		}
-		else
-		{
+		} else {
 			return b[back];
 		}
 	}
 
-	public void dequeuef()
-	{
-		if(!empty())
-		{
-			front = (front-1+b.length)%b.length;
+	public void dequeuefront() {
+		if (!empty()) {
 			b[front] = null;
+			front = (front - 1 + b.length) % b.length;
 		}
 	}
 
-	public void dequeueb()
-	{
-		if(!empty())
-		{
+	public void dequeueback() {
+		if (!empty()) {
 			b[back] = null;
-			back = (back+1)%b.length;
+			back = (back + 1) % b.length;
 		}
 	}
-
-
-
 
 }

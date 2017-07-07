@@ -1,0 +1,8 @@
+#!/bin/bash
+
+while [ 1 -eq 1 ]; do
+pdflatex -halt-on-error $1
+num=$(($num+1))
+echo $num
+sleep 1
+done
