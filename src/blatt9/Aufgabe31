@@ -1,0 +1,42 @@
+Aufgabe 31:
+a)
+1) O(1)           Wurzel ist min
+2) O(n/2)=O(n)    Maximum ist eines der Blätter
+3) O(n)           Jedes Element könnte das Gesuchte sein (Optimierung wäre O(n/2) = O(n), indem man Teilbäume nicht weiter durchsucht deren Wurzeln größer als das Gesuchte Element sind.) 
+4) O(n)           gleich wie 3)	
+
+b)
+Jedes abzuspeichernde Element bekommt eine Zahl zugewiesen, die zunimmt pro Element im Heap. Es wird ein Max-Heap verwendet. Mit der max Funktion erhält man das oberste Element des Stacks. 
+max = O(1)
+delete = O(log(n))
+insert = O(log(n))
+
+c)
+18,19,33,10,24,23,41,36,35
+18,19,33,36,24,23,41,10,35
+18,19,41,36,24,23,33,10,35
+18,36,41,19,24,23,33,10,35
+18,36,41,35,24,23,33,10,19
+41,36,18,35,24,23,33,10,19
+41,36,33,35,24,23,18,10,19  --Heap erzeugt
+
+19,36,33,35,24,23,18,10,41
+36,19,33,35,24,23,18,10,41
+36,35,33,19,24,23,18,10,41
+36,35,33,19,24,23,18,10,41
+10,35,33,19,24,23,18,36,41
+35,10,33,19,24,23,18,36,41
+35,24,33,19,10,23,18,36,41
+18,24,33,19,10,23,35,36,41
+33,24,18,19,10,23,35,36,41
+33,24,23,19,10,18,35,36,41
+18,24,23,19,10,33,35,36,41
+24,18,23,19,10,33,35,36,41
+24,19,23,18,10,33,35,36,41
+10,19,23,18,24,33,35,36,41
+23,19,10,18,24,33,35,36,41
+18,19,10,23,24,33,35,36,41
+19,18,10,23,24,33,35,36,41
+10,18,19,23,24,33,35,36,41
+18,10,19,23,24,33,35,36,41
+10,18,19,23,24,33,35,36,41

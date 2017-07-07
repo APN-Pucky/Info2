@@ -1,0 +1,28 @@
+Aufgabe 30:
+a)
+f_1: n^4
+f_2: n*log(n)^2
+f_3: n^2
+f_4: log(n)^2
+
+b)
+f = n*log_2(n)
+g = n^2*log_2(n)
+Blatt 4 Aufgabe 14:
+lim (f/g)(n) = 0 => f = O(g)
+
+f/g = 1/n => f=O(g)
+
+c)
+f = n* log_4(n) = n* log_2(n)/log_2(4) = 0.5 n * log_2(n)
+g = n* log_2(n)
+
+=> f = c *g => g=O(f) => f= Omega(g)
+
+d)
+
+f = O(log_2(n))
+
+E c>0 E n_0 A n>n_0 : f(n) <= c*g(n)
+
+n_0 = 43

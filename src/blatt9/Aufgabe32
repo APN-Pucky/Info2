@@ -1,0 +1,7 @@
+Aufgabe 32
+a)
+Die Kunden lassen sich mittels eines Heapsorts sortieren. Dieser hat eine Komplexität von O(n*log(n)). Der Zugriff auf die log(n) Kunden braucht O(log(n)) und auf die sqr(n) Kunden braucht sqr(n).
+Da log(n)<sqr(n)<n folgt O(n* log(n) + sqr(n) + log(n)) = O(n*log(n)).
+
+b)
+Counting Sort erfüllt die Laufzeit. Da dieser eine Laufzeit von O(n+k) besitzt und höchstwahrscheinlich kein Kunde öfter geflogen ist, als die Fluglinie Kunden hat, folgt O(n), zum Sortieren.(Alternative? @ Joey)

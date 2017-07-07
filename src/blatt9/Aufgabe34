@@ -1,0 +1,3 @@
+Aufgabe 34:
+
+delete muss mindestens eine Laufzeit von O(log2(log2(n))) haben, da beim Einfügen eines Elements die Struktur um eine Element verändert wird und dann wiederhergestellt wird (ähnlich wie beim Heapsort -> restore-Methode). Die delete-Operation ändert ebenfalls nur einen Wert und dann wird die Struktur wiederhergestellt.
