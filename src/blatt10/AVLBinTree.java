@@ -1,3 +1,5 @@
+package blatt10;
+
 public class AVLBinTree<E extends Comparable<E>>
 {
 	private AVLBinTreeNode<E> root;
@@ -214,14 +216,14 @@ public class AVLBinTree<E extends Comparable<E>>
 
 	public boolean contains(E elem)
 	{
-		cur = root;
+		AVLBinTreeNode<E> cur = root;
 		while(cur!=null)
 		{
-			if(elem.compareTo(cur) >0)
+			if(elem.compareTo(cur.getValue()) >0)
 			{
 				cur = cur.getRightChild();
 			}
-			else if(elem.compareTo(cur)<0)
+			else if(elem.compareTo(cur.getValue())<0)
 			{
 				cur = cur.getLeftChild();
 			}

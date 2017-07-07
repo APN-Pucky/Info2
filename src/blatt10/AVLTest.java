@@ -1,3 +1,5 @@
+package blatt10;
+
 public class AVLTest
 {
 	public static void main(String[] args)

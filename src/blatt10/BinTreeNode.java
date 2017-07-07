@@ -1,3 +1,5 @@
+package blatt10;
+
 /**
  * Klasse BinTreeNode realisiert einen einfachen Knoten in einem binaeren Baum.
  * Hierbei wird der Integer-Wert, den der Knoten enthaelt, im Konstruktor angegeben.
