@@ -1,19 +1,21 @@
 package blatt10;
 
-public class AVLTest
-{
-	public static void main(String[] args)
-	{
+/**
+ * Klasse testet die Korrektheit des Einfuegens in einen Baum.
+ * 
+ * @author Alexander Neuwirth
+ * @author Leonhard Segger
+ * @author Jonathan Sigrist
+ *
+ */
+public class AVLTest {
+	public static void main(String[] args) {
 
-		AVLBinTree tree = new AVLBinTree<Integer>();
-		/*tree.insert(1);
-		tree.insert(2);
-		tree.insert(5);
-		tree.insert(3);
-		tree.insert(4);
-		tree.insert(6);
-		tree.insert(7);
-		tree.delete(6);*/
+		AVLBinTree<Integer> tree = new AVLBinTree<Integer>();
+		/*
+		 * tree.insert(1); tree.insert(2); tree.insert(5); tree.insert(3);
+		 * tree.insert(4); tree.insert(6); tree.insert(7); tree.delete(6);
+		 */
 		tree.insert(19);
 		tree.insert(13);
 		tree.insert(52);

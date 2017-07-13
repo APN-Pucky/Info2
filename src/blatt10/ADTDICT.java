@@ -1,19 +1,51 @@
 package blatt10;
+
 /**
- * Kommentier noch nötig =>Joey
+ * @author Alexander Neuwirth
+ * @author Leonhard Segger
+ * @author Jonathan Sigrist
  * 
  * @param <E>
+ *            Elemente der Datenstruktur
  */
-public class ADTDICT<E extends Comparable<E>> 
-{
-	private AVLBinTree<E> tree ;
-	
-	public ADTDICT()
-	{
+public class ADTDICT<E extends Comparable<E>> {
+	private AVLBinTree<E> tree;
+
+	/**
+	 * Konstruktor: Erstellt ein neues und leeres Dictionary.
+	 */
+	public ADTDICT() {
 		tree = new AVLBinTree<E>();
 	}
-	
-	public void insert(E elem){tree.insert(elem);}
-	public void delete(E elem){tree.delete(elem);}
-	public boolean member(E elem){return tree.contains(elem);}
+
+	/**
+	 * Fuegt einen Eintrag hinzu.
+	 * 
+	 * @param elem
+	 *            hinzuzufuegender Eintrag
+	 */
+	public void insert(E elem) {
+		tree.insert(elem);
+	}
+
+	/**
+	 * Loescht einen Eintrag heraus.
+	 * 
+	 * @param elem
+	 *            tu loeschender Eintrag
+	 */
+	public void delete(E elem) {
+		tree.delete(elem);
+	}
+
+	/**
+	 * Gibt zurueck, ob ein Eintrag im Dictionary vorhanden ist.
+	 * 
+	 * @param elem
+	 *            zu pruefender Eintrag
+	 * @return true, falls vorhanden; false falls nicht vorhanden
+	 */
+	public boolean member(E elem) {
+		return tree.contains(elem);
+	}
 }
