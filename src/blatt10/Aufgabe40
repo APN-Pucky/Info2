@@ -1,0 +1,8 @@
+Aufgabe 40:
+b)
+1)
+Die Elemente können beim Einfügen zu einer linearen Lsit werde => 2^32 Zugriffe  im worst case
+2)
+Schiefster AVL baum hat die Höhe 1.44*log_2(n) => ca. 1.44*32 Zugriffe im Worst case
+3)
+b=255 => a=128 => log_128((2^32+1)/2)+1 >= Höhe im Worst case => 5 Zugriffe auf Knoten
