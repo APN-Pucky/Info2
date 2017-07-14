@@ -5,3 +5,8 @@ Da log(n)<sqr(n)<n folgt O(n* log(n) + sqr(n) + log(n)) = O(n*log(n)).
 
 b)
 Counting Sort erfüllt die Laufzeit. Da dieser eine Laufzeit von O(n+k) besitzt und höchstwahrscheinlich kein Kunde öfter geflogen ist, als die Fluglinie Kunden hat, folgt O(n), zum Sortieren.(Alternative? @ Joey)
+//geht auch wie Joey mit Bucketsort
+//geht auch mit Heap: -Array mit Kundendaten durch 1/2-maliges Aufrufen von restor(i,n) in Maxheap umwandeln
+=>O(n) 
+ -in O(n^1/2)bzw. O(logn) können die ersten n^1/2 bzw. logn Kunden ausgegeben werden.
+Aufwand: O(n+logn*n^1/2)bzw O(n+logn*logn)=O(n)

@@ -1,3 +1,13 @@
 Aufgabe 34:
 
 delete muss mindestens eine Laufzeit von O(log2(log2(n))) haben, da beim Einfügen eines Elements die Struktur um eine Element verändert wird und dann wiederhergestellt wird (ähnlich wie beim Heapsort -> restore-Methode). Die delete-Operation ändert ebenfalls nur einen Wert und dann wird die Struktur wiederhergestellt.
+//das ist falsch, Lsg.:
+Operation delete des ADT PriorityQueue benötigt mindestens O(logn) Zeit.
+Bew.: Angenommen die Laufzeit wäre geringer, d.h. T(delete) {nicht elem von} Omega(logn).
+Dann ließe sich ein Sortieralg. finden mit Laufzeit von weniger als O(nlogn).
+1. Aufbau der PriorityQueue durch einfügen der n Elemente in O(n*log(logn))
+2. Finde das kleinste Element in O(1)
+3. Füge das kleinste Element sukzessiv in einem Array und lösche es aus der PriorityQueue Laufzeit: T_delete(n)
+4. Wiederhole bis keine Elemente mehr vorhanden sind,
+Laufzeit: T_PQSort(n) {elem von} O(nloglogn+n*T_delete(n)) = O(n*max(loglogn, T_delete(n)))
+=> T_delete(n) {elem von} O(logn)  

@@ -1,15 +1,17 @@
 Aufgabe 31:
 a)
 1) O(1)           Wurzel ist min
-2) O(n/2)=O(n)    Maximum ist eines der Blätter
+2) O(n/2)=O(n)    Maximum ist eines der Blätter 
+//hier könnte/sollte man genauer tetha(n) sagen, da sowohl im günstigsten, als auh im üngünstigsten Fall der gesamte Heap
+(ab dem Knoten n/2) durchsucht werden muss. Man soll auch Mindestlaufzeit und nicht nur obere schranke abgucken (im Allgemeinen).
 3) O(n)           Jedes Element könnte das Gesuchte sein (Optimierung wäre O(n/2) = O(n), indem man Teilbäume nicht weiter durchsucht deren Wurzeln größer als das Gesuchte Element sind.) 
 4) O(n)           gleich wie 3)	
 
 b)
 Jedes abzuspeichernde Element bekommt eine Zahl zugewiesen, die zunimmt pro Element im Heap. Es wird ein Max-Heap verwendet. Mit der max Funktion erhält man das oberste Element des Stacks. 
 max = O(1)
-delete = O(log(n))
-insert = O(log(n))
+delete = O(log(n)) //pop ->Sinkprozess
+insert = O(log(n)) //push ->Aufstiegsprozess =>Stackoperationen in O(log(n))
 
 c)
 18,19,33,10,24,23,41,36,35
